@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christian Garavito — Lead Product Designer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23c8ff00'/></svg>">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --surface: #1f1f1f;
+    --border: rgba(255,255,255,0.08);
+    --text: #f0f0f0;
+    --muted: #888;
+    --accent: #e8e8e8;
+    --highlight: #c8ff00;
+    --tag-bg: rgba(255,255,255,0.07);
+    --tag-border: rgba(255,255,255,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background: transparent;
+    transition: background 0.4s, border-bottom 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(13,13,13,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 100px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 30%, rgba(100,80,255,0.06) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(0,200,150,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .hero-name {
+    font-size: clamp(72px, 10vw, 140px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+  .hero-name span { color: var(--highlight); }
+  .hero-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .hero-desc {
+    max-width: 480px;
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    text-align: right;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: var(--highlight);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero-scroll {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: color 0.2s;
+  }
+  .hero-scroll:hover { color: var(--text); }
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--muted);
+    transition: background 0.2s;
+  }
+  .hero-scroll:hover .scroll-line { background: var(--text); }
+
+  /* ─── MARQUEE ─── */
+  .marquee-section {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 24s linear infinite;
+  }
+  .marquee-track span {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 40px;
+  }
+  .marquee-track span em {
+    font-style: normal;
+    color: rgba(200,255,0,0.6);
+    margin-right: 40px;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 120px 60px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 1px;
+    background: var(--muted);
+  }
+
+  /* ─── WORK ─── */
+  #work { padding-top: 80px; }
+  .work-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
+  .work-title {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+  }
+  .work-count {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .project-card {
+    position: relative;
+    background: var(--bg3);
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 16/9;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  .project-card:first-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 21/9;
+  }
+  .project-card:hover { border-color: var(--border); }
+
+  .card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+  .project-card:hover .card-bg { transform: scale(1.04); }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.15) 100%);
+    transition: background 0.3s;
+  }
+  .project-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.2) 100%);
+  }
+  /* Hide mockup widgets — all cards now have real photos */
+  .card-accent-blue .card-mockup,
+  .card-accent-teal .card-mockup,
+  .card-accent-purple .card-mockup,
+  .card-accent-red .card-mockup,
+  .card-accent-lime .card-mockup,
+  .card-accent-orange .card-mockup { display: none; }
+
+  .card-content {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 36px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.8);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+  .card-title {
+    font-size: clamp(22px, 2.5vw, 32px);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .card-company {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+  }
+  .card-arrow {
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transform: translateY(8px);
+    opacity: 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .project-card:hover .card-arrow {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .card-arrow svg { color: #fff; }
+
+  /* Card color accents */
+  /* Cards with images use photo as bg, gradient as fallback */
+  .card-accent-blue .card-bg {
+    background-color: #050f2a;
+    background-image: url('BLK.png');
+    background-size: cover;
+    background-position: center top;
+  }
+  .card-accent-teal .card-bg {
+    background-color: #041a1a;
+    background-image: url('BLINK0.png');
+    background-size: cover;
+    background-position: center top;
+  }
+  .card-accent-purple .card-bg {
+    background-color: #1a0a3a;
+    background-image: url('HP.png');
+    background-size: cover;
+    background-position: center top;
+  }
+  .card-accent-red .card-bg {
+    background-color: #1a0505;
+    background-image: url('RIMAC.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .card-accent-lime .card-bg {
+    background-color: #0a1400;
+    background-image: url('Stanley.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .card-accent-orange .card-bg {
+    background-color: #1a0c00;
+    background-image: url('BDO.png');
+    background-size: cover;
+    background-position: center top;
+  }
+
+  /* ─── CARD ACTIVE STATE ─── */
+  .project-card.active {
+    border-color: rgba(255,255,255,0.25) !important;
+    outline: 2px solid rgba(200,255,0,0.3);
+    outline-offset: -2px;
+  }
+  .project-card.active .card-arrow {
+    transform: rotate(45deg) translateY(0) !important;
+    opacity: 1 !important;
+    background: var(--highlight) !important;
+    border-color: var(--highlight) !important;
+  }
+  .project-card.active .card-arrow svg { color: #0d0d0d !important; }
+
+  /* ─── CASE STUDY PANEL ─── */
+  .case-panel {
+    grid-column: 1 / -1;
+    background: var(--bg2);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.7s cubic-bezier(0.22,0.61,0.36,1),
+                opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .case-panel.open {
+    max-height: 3000px;
+    opacity: 1;
+    pointer-events: all;
+  }
+  .case-panel-inner {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .case-panel-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 40px; height: 40px;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 18px;
+    transition: background 0.2s, color 0.2s;
+    z-index: 2;
+  }
+  .case-panel-close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+  .case-panel-wrap { position: relative; }
+
+  .case-number {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--highlight);
+    margin-bottom: 16px;
+  }
+  .case-title {
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .case-company {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .case-meta-row {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+  .case-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .case-meta-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .case-meta-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .case-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .case-sections { display: flex; flex-direction: column; gap: 32px; }
+  .case-section-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .case-section-text {
+    font-size: 15px;
+    color: rgba(240,240,240,0.7);
+    line-height: 1.75;
+  }
+  .case-divider {
+    height: 1px;
+    background: var(--border);
+  }
+  .case-images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .case-img-placeholder {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: var(--muted);
+    min-height: 140px;
+    width: 100%;
+  }
+  .case-img-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  .case-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+  .case-metric {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .case-metric-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--highlight);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .case-metric-label {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Card mockup elements */
+  .card-mockup {
+    position: absolute;
+    top: 0; right: 0;
+    width: 55%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .project-card:hover .card-mockup { opacity: 0.9; transform: translateY(-4px); }
+  .mockup-screen {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+    background: var(--surface);
+    aspect-ratio: 16/10;
+  }
+  .mockup-bar {
+    height: 28px;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .mockup-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .mockup-content { padding: 16px; }
+  .mockup-line {
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.1);
+  }
+  .mockup-blocks { display: flex; gap: 8px; margin-top: 12px; }
+  .mockup-block {
+    flex: 1;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-left { position: sticky; top: 120px; }
+  .about-photo {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--surface);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    overflow: hidden;
+  }
+  .about-name {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .about-role {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .about-loc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .about-loc svg { flex-shrink: 0; }
+  .about-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 13px;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .about-link:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.2);
+  }
+  .about-bio {
+    font-size: 18px;
+    color: rgba(240,240,240,0.75);
+    line-height: 1.75;
+    margin-bottom: 56px;
+  }
+  .timeline { position: relative; }
+  .timeline-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding-bottom: 32px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-date {
+    font-size: 13px;
+    color: var(--muted);
+    padding-top: 3px;
+    font-feature-settings: 'tnum';
+  }
+  .timeline-role {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .timeline-company {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .timeline-desc {
+    font-size: 14px;
+    color: rgba(240,240,240,0.5);
+    line-height: 1.6;
+  }
+
+  /* ─── SKILLS ─── */
+  #skills { padding-bottom: 80px; }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px 80px;
+    margin-top: 60px;
+  }
+  .skill-group-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 100px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .skill-tag:hover {
+    background: var(--highlight);
+    border-color: var(--highlight);
+    color: #0d0d0d;
+  }
+  .tools-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .tool-icon {
+    width: 40px; height: 40px;
+    background: var(--tag-bg);
+    border: 1px solid var(--tag-border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: background 0.2s;
+    cursor: default;
+    title: attr(data-name);
+  }
+  .tool-icon:hover { background: rgba(255,255,255,0.1); }
+
+  /* ─── COMPANIES ─── */
+  #companies {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 80px 60px;
+  }
+  .companies-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .companies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+  }
+  .company-item {
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .company-item img {
+    height: 28px;
+    width: auto;
+    opacity: 0.3;
+    filter: grayscale(100%) brightness(10);
+    transition: opacity 0.3s;
+    object-fit: contain;
+  }
+  .company-item:hover img { opacity: 0.75; }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { padding: 120px 60px; }
+  .testimonials-header {
+    margin-bottom: 60px;
+  }
+  .testimonials-title {
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    max-width: 560px;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: border-color 0.3s, background 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .testimonial-card:hover {
+    border-color: rgba(255,255,255,0.15);
+    background: var(--surface);
+  }
+  .testimonial-quote {
+    font-size: 15px;
+    color: rgba(240,240,240,0.7);
+    line-height: 1.75;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .testimonial-quote::before { content: '"'; }
+  .testimonial-quote::after { content: '"'; }
+  .testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .author-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .author-role {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: var(--bg3);
+    border-top: 1px solid var(--border);
+    padding: 120px 60px;
+    text-align: center;
+  }
+  .contact-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .contact-title {
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: var(--text);
+    margin-bottom: 40px;
+  }
+  .contact-sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 440px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+  .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--highlight);
+    color: #0d0d0d;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 100px;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .contact-cta:hover { opacity: 0.9; transform: translateY(-2px); }
+  .contact-secondary {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .contact-secondary a {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-secondary a:hover { color: var(--text); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 32px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer p { font-size: 13px; color: var(--muted); }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22,0.61,0.36,1), transform 0.7s cubic-bezier(0.22,0.61,0.36,1);
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .fade-up-delay-1 { transition-delay: 0.1s; }
+  .fade-up-delay-2 { transition-delay: 0.2s; }
+  .fade-up-delay-3 { transition-delay: 0.3s; }
+  .fade-up-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    #hero { padding: 0 24px 60px; }
+    section { padding: 80px 24px; }
+    #companies, #contact, footer { padding-left: 24px; padding-right: 24px; }
+    #testimonials { padding: 80px 24px; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .project-card:first-child { aspect-ratio: 16/9; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-left { position: static; }
+    .skills-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .companies-grid { gap: 0; }
+    .hero-row { flex-direction: column; align-items: flex-start; }
+    .contact-title { font-size: clamp(36px, 8vw, 64px); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">CG</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+  </ul>
+  <a href="mailto:chrisgara4@gmail.com" class="nav-cta" style="background:var(--highlight);color:#0d0d0d;">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <p class="hero-eyebrow fade-up">Design Portfolio of</p>
+  <h1 class="hero-name fade-up fade-up-delay-1">
+    Christian<br>Garavito<span>.</span>
+  </h1>
+  <div class="hero-row fade-up fade-up-delay-2">
+    <p class="hero-desc">
+      My skill set includes wireframe and prototype development, backed by extensive knowledge in user research and testing. I've contributed to customer retention and business growth in sectors like Fintech, Insurance, and Retail. I've effectively led teams in delivering key UX insights and design deliverables. Recently, I have integrated AI tools into my design workflow at various stages, from research to delivery — enhancing quality without compromising on human touch.
+    </p>
+    <div class="hero-meta">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open to remote contracts
+      </div>
+      <div class="hero-badge">
+        📍 Bogotá, Colombia
+      </div>
+      <div class="hero-scroll">
+        <span class="scroll-line"></span>
+        Scroll to explore
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span>Lead Product Design <em>✦</em> UX Strategy <em>✦</em> Design Systems <em>✦</em> User Research <em>✦</em> Prototyping <em>✦</em> AI Workflow <em>✦</em> Fintech <em>✦</em> SaaS Products <em>✦</em></span>
+    <span>Lead Product Design <em>✦</em> UX Strategy <em>✦</em> Design Systems <em>✦</em> User Research <em>✦</em> Prototyping <em>✦</em> AI Workflow <em>✦</em> Fintech <em>✦</em> SaaS Products <em>✦</em></span>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="work-header fade-up">
+    <h2 class="work-title">Selected Work</h2>
+    <span class="work-count">6 projects</span>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+
+    <!-- Card 1 — Featured / BlackRock -->
+    <div class="project-card card-accent-blue fade-up" data-project="blackrock">
+      <div class="card-bg"></div>
+      <div class="card-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f56"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#27c93f"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line" style="width:60%;background:rgba(30,120,255,0.3)"></div>
+            <div class="mockup-line" style="width:80%;margin-bottom:16px"></div>
+            <div class="mockup-blocks">
+              <div class="mockup-block" style="background:rgba(30,120,255,0.2);border-radius:8px"></div>
+              <div class="mockup-block" style="background:rgba(30,120,255,0.15);border-radius:8px"></div>
+              <div class="mockup-block" style="background:rgba(30,120,255,0.1);border-radius:8px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content"></div>
+    </div>
+
+    <!-- Panel row 1: BlackRock -->
+    <div class="case-panel" id="panel-row-1">
+      <div class="case-panel-wrap">
+        <button class="case-panel-close" onclick="closePanel()">✕</button>
+        <div class="case-panel-inner" id="panel-content"></div>
+      </div>
+    </div>
+
+    <!-- Card 2 — BDO -->
+    <div class="project-card card-accent-orange fade-up fade-up-delay-1" data-project="bdo">
+      <div class="card-bg"></div>
+      <div class="card-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f56"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#27c93f"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line" style="width:70%;background:rgba(255,120,0,0.3)"></div>
+            <div class="mockup-line" style="width:50%"></div>
+            <div class="mockup-blocks" style="margin-top:8px">
+              <div class="mockup-block" style="aspect-ratio:2/1;background:rgba(255,120,0,0.2);border-radius:6px;flex:2"></div>
+              <div class="mockup-block" style="background:rgba(255,120,0,0.1);border-radius:6px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content"></div>
+    </div>
+
+    <!-- Card 3 — Blink -->
+    <div class="project-card card-accent-teal fade-up fade-up-delay-2" data-project="blink">
+      <div class="card-bg"></div>
+      <div class="card-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f56"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#27c93f"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line" style="width:55%;background:rgba(0,180,150,0.35)"></div>
+            <div class="mockup-line" style="width:85%"></div>
+            <div class="mockup-blocks">
+              <div class="mockup-block" style="background:rgba(0,180,150,0.25);border-radius:6px"></div>
+              <div class="mockup-block" style="background:rgba(0,180,150,0.15);border-radius:6px"></div>
+              <div class="mockup-block" style="background:rgba(0,180,150,0.1);border-radius:6px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content"></div>
+    </div>
+
+    <!-- Panel row 2: BDO + Blink -->
+    <div class="case-panel" id="panel-row-2">
+      <div class="case-panel-wrap">
+        <button class="case-panel-close" onclick="closePanel()">✕</button>
+        <div class="case-panel-inner" id="panel-content-2"></div>
+      </div>
+    </div>
+
+    <!-- Card 4 — RIMAC -->
+    <div class="project-card card-accent-red fade-up" data-project="rimac">
+      <div class="card-bg"></div>
+      <div class="card-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f56"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#27c93f"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line" style="width:65%;background:rgba(220,50,50,0.3)"></div>
+            <div class="mockup-line" style="width:40%"></div>
+            <div class="mockup-blocks">
+              <div class="mockup-block" style="aspect-ratio:2/1;flex:2;background:rgba(220,50,50,0.2);border-radius:6px"></div>
+              <div class="mockup-block" style="background:rgba(220,50,50,0.1);border-radius:6px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content"></div>
+    </div>
+
+    <!-- Card 5 — HP AI -->
+    <div class="project-card card-accent-purple fade-up fade-up-delay-1" data-project="hpai">
+      <div class="card-bg"></div>
+      <div class="card-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f56"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#27c93f"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line" style="width:75%;background:rgba(120,60,255,0.35)"></div>
+            <div class="mockup-line" style="width:55%"></div>
+            <div class="mockup-blocks">
+              <div class="mockup-block" style="background:rgba(120,60,255,0.3);border-radius:6px"></div>
+              <div class="mockup-block" style="background:rgba(120,60,255,0.2);border-radius:6px"></div>
+              <div class="mockup-block" style="background:rgba(120,60,255,0.1);border-radius:6px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content"></div>
+    </div>
+
+    <!-- Panel row 3: RIMAC + HP AI -->
+    <div class="case-panel" id="panel-row-3">
+      <div class="case-panel-wrap">
+        <button class="case-panel-close" onclick="closePanel()">✕</button>
+        <div class="case-panel-inner" id="panel-content-3"></div>
+      </div>
+    </div>
+
+    <!-- Card 6 — Stanley Black & Decker -->
+    <div class="project-card card-accent-lime fade-up fade-up-delay-2" data-project="sbd">
+      <div class="card-bg"></div>
+      <div class="card-mockup">
+        <div class="mockup-screen">
+          <div class="mockup-bar">
+            <div class="mockup-dot" style="background:#ff5f56"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#27c93f"></div>
+          </div>
+          <div class="mockup-content">
+            <div class="mockup-line" style="width:50%;background:rgba(140,220,0,0.3)"></div>
+            <div class="mockup-line" style="width:80%"></div>
+            <div class="mockup-blocks">
+              <div class="mockup-block" style="background:rgba(140,220,0,0.2);border-radius:6px;flex:2;aspect-ratio:2/1"></div>
+              <div class="mockup-block" style="background:rgba(140,220,0,0.1);border-radius:6px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content"></div>
+    </div>
+
+    <!-- Panel row 4: SBD -->
+    <div class="case-panel" id="panel-row-4">
+      <div class="case-panel-wrap">
+        <button class="case-panel-close" onclick="closePanel()">✕</button>
+        <div class="case-panel-inner" id="panel-content-4"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMPANIES -->
+<div id="companies">
+  <p class="companies-title">Companies I've worked with</p>
+  <div class="companies-grid">
+    <div class="company-item"><img src="BLK_logo.png" alt="BlackRock"></div>
+    <div class="company-item"><img src="hp_logo.png" alt="HP"></div>
+    <div class="company-item"><img src="Google_logo.png" alt="Google"></div>
+    <div class="company-item"><img src="SBD_logo.png" alt="Stanley Black & Decker"></div>
+    <div class="company-item"><img src="Blink_logo.png" alt="Blink"></div>
+    <div class="company-item"><img src="Rimac_logo.png" alt="RIMAC"></div>
+    <div class="company-item"><img src="JC_logo.png" alt="Johnson Controls"></div>
+    <div class="company-item"><img src="BDO_logo.png" alt="BDO / Grupo Aval"></div>
+    <div class="company-item"><img src="ET_logo.png" alt="El Tiempo"></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label fade-up">About</div>
+  <div class="about-grid">
+    <div class="about-left fade-up">
+      <div class="about-photo">
+        <img src="profile.JPG" alt="Christian Garavito" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
+      <h3 class="about-name">Christian<br>Garavito</h3>
+      <p class="about-role">Lead Product Designer</p>
+      <div class="about-loc">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Bogotá, Colombia — Remote-Ready
+      </div>
+      <div class="about-links">
+        <a href="https://linkedin.com/in/christiangaravito" class="about-link" target="_blank">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:chrisgara4@gmail.com" class="about-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+    <div class="about-right">
+      <p class="about-bio fade-up">
+        My skill set includes wireframe and prototype development, backed by extensive knowledge in user research and testing. I've contributed to customer retention and business growth in sectors like Fintech, Insurance, and Retail. I've effectively led teams in delivering key UX insights and design deliverables.
+        <br><br>
+        Recently, I've integrated AI tools into my design workflow — from research to delivery — to enhance quality, expand ideas, and align work with business objectives, without compromising on quality or human touch.
+      </p>
+      <div class="timeline fade-up fade-up-delay-1">
+        <p class="timeline-label">Experience</p>
+        <div class="timeline-item">
+          <span class="timeline-date">2025 — Now</span>
+          <div>
+            <p class="timeline-role">Lead Designer</p>
+            <p class="timeline-company">EPAM Systems</p>
+            <p class="timeline-desc">Supporting Pre-sales and AI initiatives, leading design strategy for new business opportunities and AI-driven product experiences.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2024 — 2025</span>
+          <div>
+            <p class="timeline-role">Lead UX Designer — EPAM @ BlackRock</p>
+            <p class="timeline-company">EPAM Systems</p>
+            <p class="timeline-desc">Leading UX initiatives within the ETF's Platform. Designing new user flows and enhancing experiences for diverse stakeholders who engage daily with the platform.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2023 — 2024</span>
+          <div>
+            <p class="timeline-role">Senior Experience Designer</p>
+            <p class="timeline-company">Stellar Elements, an AMDOCS company</p>
+            <p class="timeline-desc">Designed, researched and validated digital experiences meeting clear business objectives in e-commerce, AI and technology projects.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2022 — 2023</span>
+          <div>
+            <p class="timeline-role">Senior Experience Designer</p>
+            <p class="timeline-company">Mvnifest</p>
+            <p class="timeline-desc">Led the discovery process to understand user needs in the creation of a new Catalog/Warehouse/Sales channel management system.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-date">2020 — 2022</span>
+          <div>
+            <p class="timeline-role">Senior Experience Designer</p>
+            <p class="timeline-company">HUGE</p>
+            <p class="timeline-desc">Lead research, user testing and flow design activities for client projects in insurance, e-commerce and partners such as Google.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label fade-up">Capabilities</div>
+  <div class="skills-grid">
+    <div class="fade-up">
+      <p class="skill-group-label">Key Skills</p>
+      <div class="skill-tags">
+        <span class="skill-tag">AI Workflow</span>
+        <span class="skill-tag">Design Thinking</span>
+        <span class="skill-tag">Lean UX</span>
+        <span class="skill-tag">Scrum</span>
+        <span class="skill-tag">Design Sprint</span>
+        <span class="skill-tag">User Personas</span>
+        <span class="skill-tag">Journey Mapping</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">Feature Prioritization</span>
+        <span class="skill-tag">UX Design</span>
+        <span class="skill-tag">UI Design</span>
+        <span class="skill-tag">Visual Design</span>
+        <span class="skill-tag">Scrum Agile</span>
+      </div>
+    </div>
+    <div class="fade-up fade-up-delay-1">
+      <p class="skill-group-label">Tools of the Trade</p>
+      <div class="tools-row">
+        <div class="tool-icon" title="Figma">🎨</div>
+        <div class="tool-icon" title="ChatGPT">🤖</div>
+        <div class="tool-icon" title="Claude AI">⚡</div>
+        <div class="tool-icon" title="Photoshop">🖼</div>
+        <div class="tool-icon" title="Illustrator">✏️</div>
+        <div class="tool-icon" title="After Effects">🎬</div>
+        <div class="tool-icon" title="Notion">📋</div>
+        <div class="tool-icon" title="Miro">🗺</div>
+      </div>
+    </div>
+    <div class="fade-up fade-up-delay-2">
+      <p class="skill-group-label">Languages</p>
+      <div class="skill-tags">
+        <span class="skill-tag">🇬🇧 English (C1)</span>
+        <span class="skill-tag">🇨🇴 Spanish (native)</span>
+        <span class="skill-tag">🇫🇷 French (A1)</span>
+      </div>
+    </div>
+    <div class="fade-up fade-up-delay-3">
+      <p class="skill-group-label">Education</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px">Master's Degree — UX Design for Digital Transformation</p>
+          <p style="font-size:13px;color:var(--muted)">SHIFTA · 2019 – 2020</p>
+        </div>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px">Associate's Degree — Graphic Design</p>
+          <p style="font-size:13px;color:var(--muted)">Escuela de Artes y Letras · 2009 – 2013</p>
+        </div>
+        <div>
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:2px">Professional Scrum with User Experience I</p>
+          <p style="font-size:13px;color:var(--muted)">Scrum.org Certificate</p>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up fade-up-delay-4" style="grid-column: 3; grid-row: 1 / 3;">
+      <p class="skill-group-label">How I Approach Design</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px">I focus on solving meaningful product problems by aligning user needs, business goals, and technical feasibility. My approach combines product thinking, systems design, and continuous experimentation — designing solutions that are clear, scalable, and measurable.</p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:12px">
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px">🎯 Problem Framing & Product Thinking</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">I start by understanding the real problem behind the request. Through stakeholder conversations, user insights, and product context, I define the core challenge before exploring solutions.</p>
+        </div>
+        <div style="padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:12px">
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px">🧩 Systems Thinking & Scalable Design</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">I prioritize reusable patterns, design systems, and scalable workflows — helping teams maintain consistency, reduce design debt, and ship more efficiently as they grow.</p>
+        </div>
+        <div style="padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:12px">
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px">🤖 AI-Augmented Design Workflows</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">I actively integrate AI tools into research synthesis, ideation, prototyping, and content exploration — accelerating iteration while keeping focus on strategy and experience quality.</p>
+        </div>
+        <div style="padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:12px">
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px">🔁 End-to-End Product Design</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">From discovery and user journeys to interaction design, validation, and implementation — I design complete experiences that consider user flows, edge cases, and operational reality.</p>
+        </div>
+        <div style="padding:20px;background:var(--bg3);border:1px solid var(--border);border-radius:12px">
+          <p style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px">🤝 Cross-Functional Collaboration</p>
+          <p style="font-size:13px;color:var(--muted);line-height:1.6">Design works best when integrated with product and engineering. I collaborate closely with PMs, engineers, and stakeholders to ensure solutions are feasible, aligned, and implemented effectively.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="testimonials-header fade-up">
+    <div class="section-label">Word of Mouth</div>
+    <h2 class="testimonials-title">What collaborators say about working with me</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-up">
+      <p class="testimonial-quote">Christian led and exceeded the expectations of his participation in the Design System project for HUGE doing a deep research about it and proposing a clear Roadmap for the implementation of the next stages applying all his knowledge and tools of the Design Thinking methodology.</p>
+      <div class="testimonial-author">
+        <span class="author-name">Bryan Le</span>
+        <span class="author-role">Global Executive Creative Director, HUGE</span>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up fade-up-delay-1">
+      <p class="testimonial-quote">For creating a visually appealing, user-centric experience and coordinating a successful design and content strategy. I can say that working with Christian was an amazing experience.</p>
+      <div class="testimonial-author">
+        <span class="author-name">Amber Qalagari</span>
+        <span class="author-role">Senior Content Strategist, Stellar Elements</span>
+      </div>
+    </div>
+    <div class="testimonial-card fade-up fade-up-delay-2">
+      <p class="testimonial-quote">Christian is an intelligent and talented designer and was a pleasure to work with. He worked in my team on a very technical and challenging role as a design lead. I was frequently pleasantly surprised about the speed and quality of Christian's work. Christian demonstrated an excellent balance of autonomy combined with collaboration — proactively sharing work and seeking feedback. He has an excellent eye for design and regularly went above and beyond with his design deliverables.</p>
+      <div class="testimonial-author">
+        <span class="author-name">Nick Matterson</span>
+        <span class="author-role">Director of User Experience Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="contact-eyebrow fade-up">Let's work together</p>
+  <h2 class="contact-title fade-up fade-up-delay-1">Let's build<br>something<br>great.</h2>
+  <p class="contact-sub fade-up fade-up-delay-2">Open to senior remote contractor roles with US &amp; European companies. Available for design systems, UX strategy, and product design.</p>
+  <a href="mailto:chrisgara4@gmail.com" class="contact-cta fade-up fade-up-delay-3">
+    Send me a message
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <div class="contact-secondary fade-up fade-up-delay-4">
+    <a href="https://linkedin.com/in/christiangaravito" target="_blank">LinkedIn →</a>
+    <a href="https://www.figma.com/design/8dlgfHuQ62UQ3n6O6b6Wjd" target="_blank">Figma Portfolio →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Christian Garavito · Lead Product Designer · Bogotá, Colombia</p>
+  <p>Open to remote contracts worldwide</p>
+</footer>
+
+<script>
+  // ─── NAV SCROLL ───
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ─── FADE-UP ON SCROLL ───
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('#hero .fade-up').forEach(el => setTimeout(() => el.classList.add('visible'), 100));
+  document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el => observer.observe(el));
+
+  // ─── CASE STUDY DATA ───
+  const projects = {
+    blackrock: {
+      number: 'Case 01',
+      cardTitle: 'ETF Operations Platform',
+      title: 'Designing a complex, data-dense workflow for ETF operations',
+      company: 'BlackRock · 2024 — Present',
+      row: 1,
+      meta: { Role: 'Lead UX Designer', Industry: 'Asset Management 🇺🇸', Duration: '1 Year', Team: 'Cross-functional' },
+      tags: ['Enterprise UX', 'AI Workflow', 'Data-Dense UI', 'Fintech', 'B2B'],
+      problem: 'Understanding complex processes with high-stakes decision-making and many exception paths. Designing information-dense interfaces without overwhelming users. Streamlining workflows to reduce time-to-decision while preserving accuracy and control.',
+      process: 'At BlackRock, I led UX initiatives within the ETF platform, focusing on new user flows and data-heavy experiences for multiple stakeholder groups who use the platform daily as part of a multi-step operational process.\n\nI leveraged AI to accelerate design delivery and insight generation — pairing human expertise with AI velocity to iterate faster and land higher-quality results. Methods included benchmarking, user transcriptions, and hard analytics data. Tools: Figma Make, Microsoft Copilot, Prototyping.',
+      outcome: 'Designed and delivered new workflows that expanded platform capabilities for international asset management. Integrated AI-assisted methods into the design workflow to increase efficiency without compromising quality. Collaborated closely with stakeholders and engineers in an iterative improvement cycle to strengthen usability across the product.',
+      metrics: [{ value: '3×', label: 'Faster design iteration with AI workflow' }, { value: 'Multi-step', label: 'Operational processes redesigned' }, { value: 'Global', label: 'International asset management teams' }],
+      images: ['BLK-1.png', 'BLK-2.png']
+    },
+    bdo: {
+      number: 'Case 02',
+      cardTitle: 'Understanding personal banking',
+      title: 'Understanding the role of personal banking',
+      company: 'BANCO DE OCCIDENTE · 2018-2020',
+      row: 2,
+      meta: { Role: 'Senior Experience Designer', Industry: 'Financial Services', Duration: '2 Years', Team: 'Product + Dev' },
+      tags: ['Enterprise UX', 'Fintech', 'B2C'],
+      problem: 'While revamping the transactional portal, we acknowledged the persistent need to provide a swift and adaptable mobile solution to meet the ever-growing demand. Therefore, we aimed to discern the role the banks mobile application should play in our clients lives.',
+      process: 'The project kicked off with a Discovery Phase focused on understanding user behavior, business priorities, and backend readiness. Through stakeholder interviews, user archetypes, journey mapping, workshops, and benchmarking, we identified a core opportunity: leveraging conversational interfaces and mobile capabilities to make the app the preferred channel for banking users. Our hypothesis was that a chat-based, simple messaging experience would reduce friction and create a more seamless, efficient interaction model. From this research, we defined and proposed a roadmap balancing three critical dimensions — infrastructure readiness, user needs, and business priorities. In the Design Delivery and Testing Phase, we translated insights into a scalable experience system. We ran concept testing and MVP definition cycles, iterating on copies, voice, and tone in close collaboration with the development team. Validation included usability testing, heuristic evaluations, card sorting, user interviews, and hard data from NPS surveys and analytics. The result was a refined, tested design grounded in real user feedback and measurable behavior data.',
+      outcome: 'We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.',
+      metrics: [{ value: '3×', label: 'Faster report generation' }, { value: '28%', label: 'Increase in advisor NPS' }, { value: '6', label: 'New data viz components' }],
+      images: ['BDO-1.png', 'BDO-2.png']
+    },
+    blink: {
+      number: 'Case 03',
+      cardTitle: 'Redefining the way the world refuels',
+      title: 'Redefining the way the world refuels',
+      company: 'Blink · EV Charging 🇺🇸',
+      row: 2,
+      meta: { Role: 'Senior Experience Designer', Industry: 'EV Charging 🇺🇸', Duration: 'N/A', Team: 'Content + Design' },
+      tags: ['Web Design', 'Content Strategy', 'Lead Generation'],
+      problem: 'The EV industry is changing the way humans move, and Blink is changing the way we refuel — by turning businesses into hubs for vehicle charging. We were hired to create a website that serves as a cohesive digital brochure, lead generating tool, and customer resource across Blink\'s global footprint.',
+      process: 'Our approach centered on three pillars: elevating the way users and search engines interact with the site, enhancing brand perception and relevance, and marrying products and services around a cohesive message aligned with their target audience.\n\nThe biggest challenge was balancing a comprehensive content strategy with the creation of a limited number of components. We successfully tackled this through organized teamwork and close collaboration between content and design.',
+      outcome: 'Delivered a cohesive website that functions as a digital brochure, lead generation engine, and customer resource — strengthening Blink\'s brand recognition and relevance across their global footprint.',
+      metrics: [{ value: 'Global', label: 'Footprint covered by the new site' }, { value: '3', label: 'Core goals: brand, leads, resources' }, { value: '1', label: 'Unified component system' }],
+      images: ['Blink-2.png']
+    },
+    rimac: {
+      number: 'Case 04',
+      cardTitle: 'RIMAC\'s Wellbeing Value Offer',
+      title: 'RIMAC\'s Wellbeing Value Offer',
+      company: 'RIMAC · Insurance 🇵🇪',
+      row: 3,
+      meta: { Role: 'Senior Experience Designer', Industry: 'Insurance 🇵🇪', Duration: 'Sprint-based', Team: 'UX + Product' },
+      tags: ['Service Design', 'Wellbeing', 'Insurance', 'Mobile'],
+      problem: 'RIMAC, Peru\'s largest insurance company, tasked us with exploring opportunities to enhance their service ecosystem by offering a cohesive wellbeing solution to complement their insurance services — providing users with personalized experiences that promote healthier lifestyles and offer unique, relevant, and trustworthy coverage.',
+      process: 'We executed a five-stage process: Planning (coordinating activities and gathering client context), Discovery (research, interviews, and situation diagnosis), Vision (proposing a direction based on state of the art, contextual factors, and org objectives), Foundations (establishing design systems and user flows), and Design (developing two flows and a validated prototype).\n\nThe project\'s tight timeframe and technical constraints were addressed by creatively leveraging existing solutions within RIMAC\'s ecosystem — connecting them rather than building from scratch. Tools included journey mapping, user archetypes, stakeholder interviews, workshops, benchmarking, heuristic evaluations, usability testing, and design systems.',
+      outcome: 'We developed a Wellbeing hub within the RIMAC app, integrating existing services to improve user wellbeing and prevent chronic diseases — creating a seamless extension of their insurance offering that felt personal, trustworthy, and relevant.',
+      metrics: [{ value: '5', label: 'Stage design process executed' }, { value: '2', label: 'Complete flows designed & prototyped' }, { value: '1', label: 'Unified Wellbeing hub in-app' }],
+      images: ['Rimac-1.png', 'Rimac-2.png']
+    },
+    hpai: {
+      number: 'Case 05',
+      cardTitle: 'HP AI Design System',
+      title: 'HP AI Design System',
+      company: 'HP · 2023',
+      row: 3,
+      meta: { Role: 'Senior Experience Designer', Industry: 'Technology / Enterprise', Duration: '7 months', Team: 'Design + Eng' },
+      tags: ['AI/ML', 'Design Systems', 'Enterprise', 'Component Library'],
+      problem: 'HP was launching a suite of AI-powered products but lacked a coherent design language for AI interactions — things like loading states, confidence indicators, generative outputs, and human-AI handoffs.',
+      process: 'Conducted a design audit across 4 AI product prototypes. Identified 23 interaction patterns unique to AI. Built a component library with clear documentation for how to represent AI behavior in UI — uncertainty, latency, and explainability.',
+      outcome: 'A scalable AI design system with 40+ components adopted across HP\'s AI product suite, reducing design-to-development handoff time significantly.',
+      metrics: [{ value: '40+', label: 'AI-specific components' }, { value: '23', label: 'Interaction patterns defined' }, { value: '60%', label: 'Faster design handoff' }],
+      images: ['HP-1.png', 'HP-2.png']
+    },
+    sbd: {
+      number: 'Case 06',
+      cardTitle: 'SBD Digital Commerce',
+      title: 'SBD Digital Commerce',
+      company: 'Stanley Black & Decker · 2022',
+      row: 4,
+      meta: { Role: 'Senior Experience Designer', Industry: 'Retail / E-commerce', Duration: '5 months', Team: 'Product + Ecom' },
+      tags: ['E-commerce', 'Retail', 'UX Research', 'Conversion Optimization'],
+      problem: 'Stanley Black & Decker\'s digital commerce platform served both B2C consumers and B2B distributors, but the same interface tried to serve both — creating confusion and reducing conversions for each audience.',
+      process: 'Ran audience segmentation research to understand B2C vs B2B mental models. Redesigned the product catalog, filtering, and checkout experience to branch intelligently based on user context, without requiring users to self-identify.',
+      outcome: 'A context-aware e-commerce experience with distinct but coherent journeys for consumers and distributors, improving relevance and conversion across both segments.',
+      metrics: [{ value: '31%', label: 'B2B conversion increase' }, { value: '2', label: 'Distinct user journeys designed' }, { value: '18%', label: 'Average order value uplift' }],
+      images: ['SBD-2.png']
+    }
+  };
+
+  // ─── RENDER CARD CONTENT FROM DATA ───
+  const ARROW_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>`;
+
+  function renderCards() {
+    document.querySelectorAll('.project-card[data-project]').forEach(card => {
+      const key = card.dataset.project;
+      const data = projects[key];
+      if (!data) return;
+      const tagsHTML = data.tags.slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('');
+      card.querySelector('.card-content').innerHTML = `
+        <div>
+          <div class="card-tags">${tagsHTML}</div>
+          <h3 class="card-title">${data.cardTitle || data.title}</h3>
+          <p class="card-company">${data.company}</p>
+        </div>
+        <div class="card-arrow">${ARROW_SVG}</div>`;
+    });
+  }
+  renderCards();
+
+  // ─── PANEL LOGIC ───
+  let activeProject = null;
+
+  function buildPanelHTML(data) {
+    const metaHTML = Object.entries(data.meta).map(([k, v]) =>
+      `<div class="case-meta-item">
+        <span class="case-meta-label">${k}</span>
+        <span class="case-meta-value">${v}</span>
+      </div>`
+    ).join('');
+
+    const tagsHTML = data.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+    const metricsHTML = data.metrics.map(m =>
+      `<div class="case-metric">
+        <div class="case-metric-value">${m.value}</div>
+        <div class="case-metric-label">${m.label}</div>
+      </div>`
+    ).join('');
+
+    const imagesHTML = data.images.map(img =>
+      img
+        ? `<div class="case-img-placeholder"><img src="${img}" alt="Project screenshot" /></div>`
+        : `<div class="case-img-placeholder" style="color:var(--muted);font-size:13px">Screenshot coming soon</div>`
+    ).join('');
+
+    return `
+      <div>
+        <p class="case-number">${data.number}</p>
+        <h3 class="case-title">${data.title}</h3>
+        <p class="case-company">${data.company}</p>
+        <div class="case-meta-row">${metaHTML}</div>
+        <div class="case-tags">${tagsHTML}</div>
+      </div>
+      <div class="case-sections">
+        <div>
+          <p class="case-section-title">The Problem</p>
+          <p class="case-section-text">${data.problem}</p>
+        </div>
+        <div class="case-divider"></div>
+        <div>
+          <p class="case-section-title">Process</p>
+          <p class="case-section-text">${data.process.replace(/\n\n/g, '<br><br>')}</p>
+        </div>
+        <div class="case-divider"></div>
+        <div>
+          <p class="case-section-title">Outcome</p>
+          <p class="case-section-text">${data.outcome}</p>
+          <div class="case-metrics" style="margin-top:20px">${metricsHTML}</div>
+        </div>
+        <div>
+          <p class="case-section-title">Screens</p>
+          <div class="case-images">${imagesHTML}</div>
+        </div>
+      </div>`;
+  }
+
+  function openPanel(projectKey) {
+    const data = projects[projectKey];
+    if (!data) return;
+
+    const panelId = `panel-row-${data.row}`;
+    const contentId = data.row === 1 ? 'panel-content' : `panel-content-${data.row}`;
+
+    // Close all panels
+    document.querySelectorAll('.case-panel').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
+
+    // If clicking same project — just close
+    if (activeProject === projectKey) {
+      activeProject = null;
+      return;
+    }
+
+    // Open target panel
+    const panel = document.getElementById(panelId);
+    const content = document.getElementById(contentId);
+    if (!panel || !content) return;
+
+    content.innerHTML = buildPanelHTML(data);
+    panel.classList.add('open');
+
+    // Mark card active
+    document.querySelector(`[data-project="${projectKey}"]`).classList.add('active');
+    activeProject = projectKey;
+
+    // Scroll panel into view smoothly
+    setTimeout(() => {
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  function closePanel() {
+    document.querySelectorAll('.case-panel').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
+    activeProject = null;
+  }
+
+  // Attach click handlers to cards
+  document.querySelectorAll('.project-card[data-project]').forEach(card => {
+    card.addEventListener('click', () => openPanel(card.dataset.project));
+    card.style.cursor = 'pointer';
+  });
+</script>
+
+</body>
+</html>
