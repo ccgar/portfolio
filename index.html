@@ -971,6 +971,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 48px; }
     .about-left { position: static; }
     .skills-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .skills-grid > div { grid-column: auto !important; grid-row: auto !important; }
     .testimonials-grid { grid-template-columns: 1fr; }
     .companies-grid { gap: 0; }
     .hero-row { flex-direction: column; align-items: flex-start; }
@@ -982,20 +983,20 @@
     .case-metric-value { font-size: 22px; }
   }
 
-  /* ─── MOBILE BOTTOM SHEET (Bug 3 + 4) ─── */
+  /* ─── MOBILE BOTTOM SHEET ─── */
+  /* Bug 1 fix: always in DOM, hidden via pointer-events + transform only */
   .mobile-backdrop {
-    display: none;
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.7);
     z-index: 300;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s;
   }
   .mobile-backdrop.open { opacity: 1; pointer-events: all; }
 
   .mobile-sheet {
-    display: none;
     position: fixed;
     bottom: 0; left: 0; right: 0;
     z-index: 301;
@@ -1004,20 +1005,19 @@
     border-radius: 20px 20px 0 0;
     max-height: 88vh;
     overflow-y: auto;
-    transform: translateY(100%);
+    transform: translateY(110%);
     transition: transform 0.4s cubic-bezier(0.22,0.61,0.36,1);
     -webkit-overflow-scrolling: touch;
+    pointer-events: none;
   }
-  .mobile-sheet.open { transform: translateY(0); }
+  .mobile-sheet.open { transform: translateY(0); pointer-events: all; }
   .mobile-sheet-handle {
     width: 40px; height: 4px;
     background: rgba(255,255,255,0.2);
     border-radius: 2px;
     margin: 16px auto 0;
   }
-  .mobile-sheet-content {
-    padding: 20px 20px 48px;
-  }
+  .mobile-sheet-content { padding: 20px 20px 48px; }
   .mobile-sheet-close {
     position: absolute;
     top: 16px; right: 16px;
@@ -1031,8 +1031,22 @@
     font-size: 16px;
   }
 
+  /* Bug 2: ocultar "How I Approach Design" en mobile */
   @media (max-width: 900px) {
-    .mobile-backdrop, .mobile-sheet { display: block; }
+    .approach-hide-mobile { display: none !important; }
+  }
+
+  /* Bug 3: timeline vertical en mobile */
+  @media (max-width: 900px) {
+    .timeline-item {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .timeline-date {
+      font-size: 12px;
+      color: var(--highlight);
+      padding-top: 0;
+    }
   }
 </style>
 </head>
@@ -1438,7 +1452,7 @@
         </div>
       </div>
     </div>
-    <div class="fade-up fade-up-delay-4" style="grid-column: 3; grid-row: 1 / 3;">
+    <div class="fade-up fade-up-delay-4 approach-hide-mobile" style="grid-column: 3; grid-row: 1 / 3;">
       <p class="skill-group-label">How I Approach Design</p>
       <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px">I focus on solving meaningful product problems by aligning user needs, business goals, and technical feasibility. My approach combines product thinking, systems design, and continuous experimentation — designing solutions that are clear, scalable, and measurable.</p>
       <div style="display:flex;flex-direction:column;gap:16px">
