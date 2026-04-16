@@ -51,8 +51,8 @@
         { "value": "6", "label": "New data viz components" }
       ],
       "images": [
-        { "src": "images/bdo/BDO-1.png", "size": "full" },
-        { "src": "images/bdo/BDO-2.png", "size": "full" }
+        { "src": "images/aval/bdo-1.png", "size": "full" },
+        { "src": "images/aval/bdo-2.png", "size": "full" }
       ]
     },
     "blink": {
@@ -113,8 +113,8 @@
         { "value": "1", "label": "Unified native AI ecosystem" }
       ],
       "images": [
-        { "src": "images/hpai/HP-1.png", "size": "full" },
-        { "src": "images/hpai/HP-2.png", "size": "full" }
+        { "src": "images/hp/hp-1.png", "size": "full" },
+        { "src": "images/hp/hp-2.png", "size": "full" }
       ]
     },
     "sbd": {
