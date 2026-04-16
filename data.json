@@ -30,8 +30,8 @@
         { "value": "Global", "label": "International asset management teams" }
       ],
       "images": [
-        { "src": "BLK-1.png", "size": "full" },
-        { "src": "BLK-2.png", "size": "full" }
+        { "src": "images/blackrock/BLK-1.png", "size": "full" },
+        { "src": "images/blackrock/BLK-2.png", "size": "full" }
       ]
     },
     "bdo": {
@@ -51,8 +51,8 @@
         { "value": "6", "label": "New data viz components" }
       ],
       "images": [
-        { "src": "BDO-1.png", "size": "full" },
-        { "src": "BDO-2.png", "size": "full" }
+        { "src": "images/bdo/BDO-1.png", "size": "full" },
+        { "src": "images/bdo/BDO-2.png", "size": "full" }
       ]
     },
     "blink": {
@@ -72,7 +72,7 @@
         { "value": "1", "label": "Unified component system" }
       ],
       "images": [
-        { "src": "Blink-2.png", "size": "full" }
+        { "src": "images/blink/Blink-2.png", "size": "full" }
       ]
     },
     "rimac": {
@@ -92,8 +92,8 @@
         { "value": "1", "label": "Unified Wellbeing hub in-app" }
       ],
       "images": [
-        { "src": "Rimac-1.png", "size": "full" },
-        { "src": "Rimac-2.png", "size": "full" }
+        { "src": "images/rimac/Rimac-1.png", "size": "full" },
+        { "src": "images/rimac/Rimac-2.png", "size": "full" }
       ]
     },
     "hpai": {
@@ -113,8 +113,8 @@
         { "value": "1", "label": "Unified native AI ecosystem" }
       ],
       "images": [
-        { "src": "HP-1.png", "size": "full" },
-        { "src": "HP-2.png", "size": "full" }
+        { "src": "images/hpai/HP-1.png", "size": "full" },
+        { "src": "images/hpai/HP-2.png", "size": "full" }
       ]
     },
     "sbd": {
@@ -134,7 +134,7 @@
         { "value": "🛒", "label": "All 3 apps live on the market" }
       ],
       "images": [
-        { "src": "SBD-2.png", "size": "full" }
+        { "src": "images/sbd/SBD-2.png", "size": "full" }
       ]
     }
   }

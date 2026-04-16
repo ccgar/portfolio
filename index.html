@@ -441,37 +441,37 @@
   /* Cards with images use photo as bg, gradient as fallback */
   .card-accent-blue .card-bg {
     background-color: #050f2a;
-    background-image: url('BLK.png');
+    background-image: url('images/blackrock/BLK.png');
     background-size: cover;
     background-position: center top;
   }
   .card-accent-teal .card-bg {
     background-color: #041a1a;
-    background-image: url('BLINK0.png');
+    background-image: url('images/blink/BLINK0.png');
     background-size: cover;
     background-position: center top;
   }
   .card-accent-purple .card-bg {
     background-color: #1a0a3a;
-    background-image: url('HP.png');
+    background-image: url('images/hp/HP.png');
     background-size: cover;
     background-position: center top;
   }
   .card-accent-red .card-bg {
     background-color: #1a0505;
-    background-image: url('RIMAC.png');
+    background-image: url('images/rimac/RIMAC.png');
     background-size: cover;
     background-position: center;
   }
   .card-accent-lime .card-bg {
     background-color: #0a1400;
-    background-image: url('Stanley.png');
+    background-image: url('images/sbd/Stanley.png');
     background-size: cover;
     background-position: center;
   }
   .card-accent-orange .card-bg {
     background-color: #1a0c00;
-    background-image: url('BDO.png');
+    background-image: url('images/aval/BDO.png');
     background-size: cover;
     background-position: center top;
   }
@@ -1430,15 +1430,15 @@
 <div id="companies">
   <p class="companies-title">Companies I've worked with</p>
   <div class="companies-grid">
-    <div class="company-item"><img src="BLK_logo.png" alt="BlackRock"></div>
-    <div class="company-item"><img src="hp_logo.png" alt="HP"></div>
-    <div class="company-item"><img src="Google_logo.png" alt="Google"></div>
-    <div class="company-item"><img src="SBD_logo.png" alt="Stanley Black & Decker"></div>
-    <div class="company-item"><img src="Blink_logo.png" alt="Blink"></div>
-    <div class="company-item"><img src="Rimac_logo.png" alt="RIMAC"></div>
-    <div class="company-item"><img src="JC_logo.png" alt="Johnson Controls"></div>
-    <div class="company-item"><img src="BDO_logo.png" alt="BDO / Grupo Aval"></div>
-    <div class="company-item"><img src="ET_logo.png" alt="El Tiempo"></div>
+    <div class="company-item"><img src="images/blk/BLK_logo.png" alt="BlackRock"></div>
+    <div class="company-item"><img src="images/hp/hp_logo.png" alt="HP"></div>
+    <div class="company-item"><img src="images/googl/Google_logo.png" alt="Google"></div>
+    <div class="company-item"><img src="images/sbd/SBD_logo.png" alt="Stanley Black & Decker"></div>
+    <div class="company-item"><img src="images/blink/Blink_logo.png" alt="Blink"></div>
+    <div class="company-item"><img src="images/rimac/Rimac_logo.png" alt="RIMAC"></div>
+    <div class="company-item"><img src="images/jc/JC_logo.png" alt="Johnson Controls"></div>
+    <div class="company-item"><img src="images/aval/BDO_logo.png" alt="BDO / Grupo Aval"></div>
+    <div class="company-item"><img src="images/et/ET_logo.png" alt="El Tiempo"></div>
   </div>
 </div>
 
@@ -1448,7 +1448,7 @@
   <div class="about-grid">
     <div class="about-left fade-up">
       <div class="about-photo">
-        <img src="profile.JPG" alt="Christian Garavito" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+        <img src="images/profile/profile.JPG" alt="Christian Garavito" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
       </div>
       <h3 class="about-name">Christian<br>Garavito</h3>
       <p class="about-role">Lead Product Designer</p>
@@ -1545,13 +1545,13 @@
     <div class="fade-up fade-up-delay-1">
       <p class="skill-group-label">Tools of the Trade</p>
       <div class="tools-row">
-        <div class="tool-icon" title="Figma"><img src="Figma.png" alt="Figma"></div>
-        <div class="tool-icon" title="Claude AI"><img src="Claude.png" alt="Claude AI"></div>
-        <div class="tool-icon" title="Make"><img src="Figma Make.png" alt="Make"></div>
-        <div class="tool-icon" title="Illustrator"><img src="Illustrator.png" alt="Illustrator"></div>
-        <div class="tool-icon" title="Miro"><img src="Miro.png" alt="Miro"></div>
-        <div class="tool-icon" title="Photoshop"><img src="Photoshop.png" alt="Photoshop"></div>
-        <div class="tool-icon" title="After Effects"><img src="Aftereffects.png" alt="After Effects"></div>
+        <div class="tool-icon" title="Figma"><img src="images/apps/Figma.png" alt="Figma"></div>
+        <div class="tool-icon" title="Claude AI"><img src="images/apps/Claude.png" alt="Claude AI"></div>
+        <div class="tool-icon" title="Make"><img src="images/apps/Figma Make.png" alt="Make"></div>
+        <div class="tool-icon" title="Illustrator"><img src="images/apps/Illustrator.png" alt="Illustrator"></div>
+        <div class="tool-icon" title="Miro"><img src="images/apps/Miro.png" alt="Miro"></div>
+        <div class="tool-icon" title="Photoshop"><img src="images/apps/Photoshop.png" alt="Photoshop"></div>
+        <div class="tool-icon" title="After Effects"><img src="images/apps/Aftereffects.png" alt="After Effects"></div>
       </div>
     </div>
     <div class="fade-up fade-up-delay-2">
@@ -1677,8 +1677,19 @@
   document.querySelectorAll('#hero .fade-up').forEach(el => setTimeout(() => el.classList.add('visible'), 100));
   document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el => observer.observe(el));
 
-  // ─── CASE STUDY DATA ───
-  const projects = {
+  // ─── CASE STUDY DATA (loaded from data.json) ───
+  let projects = {};
+
+  fetch('data.json')
+    .then(r => r.json())
+    .then(data => {
+      projects = data.projects;
+      renderCards();
+      attachCardHandlers();
+    });
+
+  // placeholder so syntax below still works before fetch
+  const _projects_inline_removed = {
     blackrock: {
       number: 'Case 01',
       cardTitle: 'ETF Operations Platform',
@@ -1692,8 +1703,8 @@
       outcome: 'Designed and delivered new workflows that expanded platform capabilities for international asset management. Integrated AI-assisted methods into the design workflow to increase efficiency without compromising quality. Collaborated closely with stakeholders and engineers in an iterative improvement cycle to strengthen usability across the product.',
       metrics: [{ value: '3×', label: 'Faster design iteration with AI workflow' }, { value: 'Multi-step', label: 'Operational processes redesigned' }, { value: 'Global', label: 'International asset management teams' }],
       images: [
-        { src: 'BLK-1.png', size: 'full' },
-        { src: 'BLK-2.png', size: 'full' }
+        { src: 'images/blackrock/BLK-1.png', size: 'full' },
+        { src: 'images/blackrock/BLK-2.png', size: 'full' }
       ]
     },
     bdo: {
@@ -1709,8 +1720,8 @@
       outcome: 'We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.',
       metrics: [{ value: '3×', label: 'Faster report generation' }, { value: '28%', label: 'Increase in advisor NPS' }, { value: '6', label: 'New data viz components' }],
       images: [
-        { src: 'BDO-1.png', size: 'full' },
-        { src: 'BDO-2.png', size: 'full' }
+        { src: 'images/aval/BDO-1.png', size: 'full' },
+        { src: 'images/aval/BDO-2.png', size: 'full' }
       ]
     },
     blink: {
@@ -1726,7 +1737,7 @@
       outcome: 'Delivered a cohesive website that functions as a digital brochure, lead generation engine, and customer resource — strengthening Blink\'s brand recognition and relevance across their global footprint.',
       metrics: [{ value: 'Global', label: 'Footprint covered by the new site' }, { value: '3', label: 'Core goals: brand, leads, resources' }, { value: '1', label: 'Unified component system' }],
       images: [
-        { src: 'Blink-2.png', size: 'full' }
+        { src: 'images/blink/Blink-2.png', size: 'full' }
       ]
     },
     rimac: {
@@ -1742,8 +1753,8 @@
       outcome: 'We developed a Wellbeing hub within the RIMAC app, integrating existing services to improve user wellbeing and prevent chronic diseases — creating a seamless extension of their insurance offering that felt personal, trustworthy, and relevant.',
       metrics: [{ value: '5', label: 'Stage design process executed' }, { value: '2', label: 'Complete flows designed & prototyped' }, { value: '1', label: 'Unified Wellbeing hub in-app' }],
       images: [
-        { src: 'Rimac-1.png', size: 'full' },
-        { src: 'Rimac-2.png', size: 'full' }
+        { src: 'images/rimac/Rimac-1.png', size: 'full' },
+        { src: 'images/rimac/Rimac-2.png', size: 'full' }
       ]
     },
     hpai: {
@@ -1759,8 +1770,8 @@
       outcome: 'We moved beyond the "prompt box." By grounding AI in the machine\'s physical and digital architecture, we transformed a tool into a teammate — ensuring security is felt, not just promised.\n\nWe explored a multi-agent architecture with specialized personas: The Researcher (data synthesis and citations), The Mechanic (machine health, thermals, background tasks), and The Librarian (visual indexer for local file retrieval and semantic search).',
       metrics: [{ value: '3', label: 'Specialized AI agent personas designed' }, { value: '2', label: 'Privacy visual modes: Local & Web' }, { value: '1', label: 'Unified native AI ecosystem' }],
       images: [
-        { src: 'HP-1.png', size: 'full' },
-        { src: 'HP-2.png', size: 'full' }
+        { src: 'images/hp/HP-1.png', size: 'full' },
+        { src: 'images/hp/HP-2.png', size: 'full' }
       ]
     },
     sbd: {
@@ -1776,10 +1787,10 @@
       outcome: 'We completed the design for all three apps on schedule. The smart wrench was simultaneously prototyped and tested. Today, all three apps are available on the market.',
       metrics: [{ value: '3', label: 'Brand apps designed in parallel' }, { value: 'On time', label: 'Delivered on schedule' }, { value: '🛒', label: 'All 3 apps live on the market' }],
       images: [
-        { src: 'SBD-2.png', size: 'full' }
+        { src: 'images/sbd/SBD-2.png', size: 'full' }
       ]
     }
-  };
+  }; // end _projects_inline_removed (unused — data loaded from data.json)
 
   // ─── MOBILE DETECTION ───
   const isMobile = () => window.innerWidth <= 900;
@@ -1831,7 +1842,13 @@
         <div class="card-arrow">${ARROW_SVG}</div>`;
     });
   }
-  renderCards();
+
+  function attachCardHandlers() {
+    document.querySelectorAll('.project-card[data-project]').forEach(card => {
+      card.addEventListener('click', () => openPanel(card.dataset.project));
+      card.style.cursor = 'pointer';
+    });
+  }
 
   // ─── PANEL LOGIC ───
   let activeProject = null;
@@ -1944,11 +1961,7 @@
     activeProject = null;
   }
 
-  // Attach click handlers to cards
-  document.querySelectorAll('.project-card[data-project]').forEach(card => {
-    card.addEventListener('click', () => openPanel(card.dataset.project));
-    card.style.cursor = 'pointer';
-  });
+
 </script>
 
 </body>
