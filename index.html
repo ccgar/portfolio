@@ -222,7 +222,10 @@
     margin-top: 4px;
   }
   @media (max-width: 768px) {
-    .stats-bento { grid-template-columns: repeat(2, 1fr); }
+    .stats-bento {
+      grid-template-columns: repeat(2, 1fr);
+      margin: 40px 0 0 0;
+    }
     .stat-card { padding: 28px 24px; }
     .stat-number { font-size: 36px; }
   }
@@ -1023,7 +1026,7 @@
     nav { padding: 16px 24px; }
     .nav-links { display: none; }
     /* Bug 1: nav overlap fix */
-    #hero { padding: 100px 24px 60px; }
+    #hero { padding: 100px 24px 40px; min-height: auto; }
     section { padding: 80px 24px; }
     #companies, #contact, footer { padding-left: 24px; padding-right: 24px; }
     #testimonials { padding: 80px 24px; }
