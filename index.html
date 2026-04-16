@@ -135,6 +135,33 @@
     color: var(--muted);
     line-height: 1.7;
   }
+  .hero-desc-wrap { position: relative; }
+  .read-more-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #c8ff00;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    padding: 8px 0 0;
+    text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    .hero-desc {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .hero-desc.expanded {
+      display: block;
+      overflow: visible;
+    }
+    .read-more-btn { display: block; }
+  }
   .hero-meta {
     display: flex;
     flex-direction: column;
@@ -224,9 +251,9 @@
   @media (max-width: 768px) {
     .stats-bento {
       grid-template-columns: repeat(2, 1fr);
-      margin: 40px 0 0 0;
+      margin: 40px -24px 0 -24px;
     }
-    .stat-card { padding: 28px 24px; }
+    .stat-card { padding: 28px 20px; }
     .stat-number { font-size: 36px; }
   }
 
@@ -1147,9 +1174,12 @@
     Christian<br>Garavito<span>.</span>
   </h1>
   <div class="hero-row fade-up fade-up-delay-2">
-    <p class="hero-desc">
-     Senior UX leader with a track record of driving <span style="color:#c8ff00;font-weight:600;">customer retention and business growth</span> across <span style="color:#c8ff00;font-weight:600;">Fintech, Insurance, and Retail</span>. I partner with organizations to translate complex user needs into <span style="color:#c8ff00;font-weight:600;">strategic design decisions</span> — leading teams, shaping product direction, and delivering <span style="color:#c8ff00;font-weight:600;">measurable outcomes</span>. I leverage <span style="color:#c8ff00;font-weight:600;">AI as a force multiplier</span> across the full design lifecycle.
-    </p>
+    <div class="hero-desc-wrap">
+      <p class="hero-desc" id="hero-desc">
+       Senior UX leader with a track record of driving <span style="color:#c8ff00;font-weight:600;">customer retention and business growth</span> across <span style="color:#c8ff00;font-weight:600;">Fintech, Insurance, and Retail</span>. I partner with organizations to translate complex user needs into <span style="color:#c8ff00;font-weight:600;">strategic design decisions</span> — leading teams, shaping product direction, and delivering <span style="color:#c8ff00;font-weight:600;">measurable outcomes</span>. I leverage <span style="color:#c8ff00;font-weight:600;">AI as a force multiplier</span> across the full design lifecycle.
+      </p>
+      <button class="read-more-btn" id="read-more-btn" onclick="toggleDesc()">Read more ↓</button>
+    </div>
     <div class="hero-meta">
       <div class="hero-badge">
         <span class="badge-dot"></span>
@@ -1758,6 +1788,13 @@
     sheet.classList.add('open');
     sheet.scrollTop = 0;
     document.body.style.overflow = 'hidden';
+  }
+
+  function toggleDesc() {
+    const desc = document.getElementById('hero-desc');
+    const btn  = document.getElementById('read-more-btn');
+    const expanded = desc.classList.toggle('expanded');
+    btn.textContent = expanded ? 'Show less ↑' : 'Read more ↓';
   }
 
   function closeMobileSheet() {
