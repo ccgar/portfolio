@@ -149,18 +149,25 @@
     text-transform: uppercase;
   }
   @media (max-width: 768px) {
+    /* Hide desc by default, show only when expanded */
     .hero-desc {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      transition: all 0.3s ease;
+      display: none;
     }
     .hero-desc.expanded {
       display: block;
-      overflow: visible;
     }
     .read-more-btn { display: block; }
+
+    /* Badges horizontal row */
+    .hero-meta {
+      flex-direction: row !important;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Hide scroll to explore */
+    .hero-scroll { display: none; }
   }
   .hero-meta {
     display: flex;
@@ -1795,6 +1802,7 @@
     const btn  = document.getElementById('read-more-btn');
     const expanded = desc.classList.toggle('expanded');
     btn.textContent = expanded ? 'Show less ↑' : 'Read more ↓';
+    btn.style.marginTop = expanded ? '8px' : '0';
   }
 
   function closeMobileSheet() {
