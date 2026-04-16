@@ -1,0 +1,141 @@
+{
+  "hero": {
+    "eyebrow": "Design Portfolio of",
+    "name": "Christian Garavito",
+    "description": "Senior UX leader with a track record of driving <strong>customer retention and business growth</strong> across <strong>Fintech, Insurance, and Retail</strong>. I partner with organizations to translate complex user needs into <strong>strategic design decisions</strong> — leading teams, shaping product direction, and delivering <strong>measurable outcomes</strong>. I leverage <strong>AI as a force multiplier</strong> across the full design lifecycle.",
+    "badge": "Open to remote contracts",
+    "location": "Bogotá, Colombia"
+  },
+  "stats": [
+    { "number": "12+", "label": "Years leading design", "context": "B2B SaaS · Fintech · Enterprise" },
+    { "number": "50%", "label": "UX metric uplift", "context": "Banco de Occidente · Fintech" },
+    { "number": "5×", "label": "Faster delivery", "context": "2 weeks → 3 days · BlackRock" },
+    { "number": "6", "label": "Industries shipped", "context": "Fintech · Insurance · Retail · SaaS · Media · Enterprise" }
+  ],
+  "projects": {
+    "blackrock": {
+      "number": "Case 01",
+      "cardTitle": "ETF Operations Platform",
+      "title": "Designing a complex, data-dense workflow for ETF operations",
+      "company": "BlackRock · 2024 — 2025",
+      "row": 1,
+      "meta": { "Role": "Lead UX Designer", "Industry": "Asset Management 🇺🇸", "Duration": "1 Year", "Team": "Cross-functional" },
+      "tags": ["Enterprise UX", "AI Workflow", "Data-Dense UI", "Fintech", "B2B"],
+      "problem": "Understanding complex processes with high-stakes decision-making and many exception paths. Designing information-dense interfaces without overwhelming users. Streamlining workflows to reduce time-to-decision while preserving accuracy and control.",
+      "process": "At BlackRock, I led UX initiatives within the ETF platform, focusing on new user flows and data-heavy experiences for multiple stakeholder groups who use the platform daily as part of a multi-step operational process.\n\nI leveraged AI to accelerate design delivery and insight generation — pairing human expertise with AI velocity to iterate faster and land higher-quality results. Methods included benchmarking, user transcriptions, and hard analytics data. Tools: Figma Make, Microsoft Copilot, Prototyping.",
+      "outcome": "Designed and delivered new workflows that expanded platform capabilities for international asset management. Integrated AI-assisted methods into the design workflow to increase efficiency without compromising quality. Collaborated closely with stakeholders and engineers in an iterative improvement cycle to strengthen usability across the product.",
+      "metrics": [
+        { "value": "3×", "label": "Faster design iteration with AI workflow" },
+        { "value": "Multi-step", "label": "Operational processes redesigned" },
+        { "value": "Global", "label": "International asset management teams" }
+      ],
+      "images": [
+        { "src": "BLK-1.png", "size": "full" },
+        { "src": "BLK-2.png", "size": "full" }
+      ]
+    },
+    "bdo": {
+      "number": "Case 02",
+      "cardTitle": "Understanding personal banking",
+      "title": "Understanding the role of personal banking",
+      "company": "BANCO DE OCCIDENTE · 2018-2020",
+      "row": 2,
+      "meta": { "Role": "Senior Experience Designer", "Industry": "Financial Services", "Duration": "2 Years", "Team": "Product + Dev" },
+      "tags": ["Enterprise UX", "Fintech", "B2C"],
+      "problem": "While revamping the transactional portal, we acknowledged the persistent need to provide a swift and adaptable mobile solution to meet the ever-growing demand. Therefore, we aimed to discern the role the banks mobile application should play in our clients lives.",
+      "process": "The project kicked off with a Discovery Phase focused on understanding user behavior, business priorities, and backend readiness. Through stakeholder interviews, user archetypes, journey mapping, workshops, and benchmarking, we identified a core opportunity: leveraging conversational interfaces and mobile capabilities to make the app the preferred channel for banking users. Our hypothesis was that a chat-based, simple messaging experience would reduce friction and create a more seamless, efficient interaction model. From this research, we defined and proposed a roadmap balancing three critical dimensions — infrastructure readiness, user needs, and business priorities. In the Design Delivery and Testing Phase, we translated insights into a scalable experience system. We ran concept testing and MVP definition cycles, iterating on copies, voice, and tone in close collaboration with the development team. Validation included usability testing, heuristic evaluations, card sorting, user interviews, and hard data from NPS surveys and analytics. The result was a refined, tested design grounded in real user feedback and measurable behavior data.",
+      "outcome": "We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.",
+      "metrics": [
+        { "value": "3×", "label": "Faster report generation" },
+        { "value": "28%", "label": "Increase in advisor NPS" },
+        { "value": "6", "label": "New data viz components" }
+      ],
+      "images": [
+        { "src": "BDO-1.png", "size": "full" },
+        { "src": "BDO-2.png", "size": "full" }
+      ]
+    },
+    "blink": {
+      "number": "Case 03",
+      "cardTitle": "Redefining the way the world refuels",
+      "title": "Redefining the way the world refuels",
+      "company": "Blink · EV Charging 🇺🇸",
+      "row": 2,
+      "meta": { "Role": "Senior Experience Designer", "Industry": "EV Charging 🇺🇸", "Duration": "N/A", "Team": "Content + Design" },
+      "tags": ["Web Design", "Content Strategy", "Lead Generation"],
+      "problem": "The EV industry is changing the way humans move, and Blink is changing the way we refuel — by turning businesses into hubs for vehicle charging. We were hired to create a website that serves as a cohesive digital brochure, lead generating tool, and customer resource across Blink's global footprint.",
+      "process": "Our approach centered on three pillars: elevating the way users and search engines interact with the site, enhancing brand perception and relevance, and marrying products and services around a cohesive message aligned with their target audience.\n\nThe biggest challenge was balancing a comprehensive content strategy with the creation of a limited number of components. We successfully tackled this through organized teamwork and close collaboration between content and design.",
+      "outcome": "Delivered a cohesive website that functions as a digital brochure, lead generation engine, and customer resource — strengthening Blink's brand recognition and relevance across their global footprint.",
+      "metrics": [
+        { "value": "Global", "label": "Footprint covered by the new site" },
+        { "value": "3", "label": "Core goals: brand, leads, resources" },
+        { "value": "1", "label": "Unified component system" }
+      ],
+      "images": [
+        { "src": "Blink-2.png", "size": "full" }
+      ]
+    },
+    "rimac": {
+      "number": "Case 04",
+      "cardTitle": "RIMAC's Wellbeing Value Offer",
+      "title": "RIMAC's Wellbeing Value Offer",
+      "company": "RIMAC · Insurance 🇵🇪",
+      "row": 3,
+      "meta": { "Role": "Senior Experience Designer", "Industry": "Insurance 🇵🇪", "Duration": "Sprint-based", "Team": "UX + Product" },
+      "tags": ["Service Design", "Wellbeing", "Insurance", "Mobile"],
+      "problem": "RIMAC, Peru's largest insurance company, tasked us with exploring opportunities to enhance their service ecosystem by offering a cohesive wellbeing solution to complement their insurance services — providing users with personalized experiences that promote healthier lifestyles and offer unique, relevant, and trustworthy coverage.",
+      "process": "We executed a five-stage process: Planning (coordinating activities and gathering client context), Discovery (research, interviews, and situation diagnosis), Vision (proposing a direction based on state of the art, contextual factors, and org objectives), Foundations (establishing design systems and user flows), and Design (developing two flows and a validated prototype).\n\nThe project's tight timeframe and technical constraints were addressed by creatively leveraging existing solutions within RIMAC's ecosystem — connecting them rather than building from scratch. Tools included journey mapping, user archetypes, stakeholder interviews, workshops, benchmarking, heuristic evaluations, usability testing, and design systems.",
+      "outcome": "We developed a Wellbeing hub within the RIMAC app, integrating existing services to improve user wellbeing and prevent chronic diseases — creating a seamless extension of their insurance offering that felt personal, trustworthy, and relevant.",
+      "metrics": [
+        { "value": "5", "label": "Stage design process executed" },
+        { "value": "2", "label": "Complete flows designed & prototyped" },
+        { "value": "1", "label": "Unified Wellbeing hub in-app" }
+      ],
+      "images": [
+        { "src": "Rimac-1.png", "size": "full" },
+        { "src": "Rimac-2.png", "size": "full" }
+      ]
+    },
+    "hpai": {
+      "number": "Case 05",
+      "cardTitle": "Natively Integrated AI for HP",
+      "title": "UX/UI Exploration: Natively Integrated AI for HP",
+      "company": "HP · Computing 🇺🇸",
+      "row": 3,
+      "meta": { "Role": "Senior Experience Designer", "Industry": "Computing 🇺🇸", "Duration": "Exploration", "Team": "Design + Strategy" },
+      "tags": ["AI/UX", "Native Integration", "Design Systems", "Multi-agent"],
+      "problem": "At the dawn of the AI boom, we set out to define how an AI agent should feel when it lives natively within the hardware. This project was not about using AI — it was about designing the interface of its soul. The challenge: making the invisible tangible, secure, and deeply integrated into the HP ecosystem.",
+      "process": "We explored a dual-layer integration system: a seamless UI that allows the agent to \"reach into\" existing HP software and third-party creative suites, and an Integration Marketplace — a modular hub where users plug specific AI capabilities into their workflow through a cohesive iconographic system that feels like a natural OS extension.\n\nWe also developed Privacy as a Visual State — two distinct modes so users always know where their data resides. Local Mode (The Vault) uses cooler tones and containment UI for on-device processing. Web Mode (The Horizon) shifts to a warmer, expansive aesthetic when connecting to the cloud, maintaining a clear \"connected\" status.",
+      "outcome": "We moved beyond the \"prompt box.\" By grounding AI in the machine's physical and digital architecture, we transformed a tool into a teammate — ensuring security is felt, not just promised.\n\nWe explored a multi-agent architecture with specialized personas: The Researcher (data synthesis and citations), The Mechanic (machine health, thermals, background tasks), and The Librarian (visual indexer for local file retrieval and semantic search).",
+      "metrics": [
+        { "value": "3", "label": "Specialized AI agent personas designed" },
+        { "value": "2", "label": "Privacy visual modes: Local & Web" },
+        { "value": "1", "label": "Unified native AI ecosystem" }
+      ],
+      "images": [
+        { "src": "HP-1.png", "size": "full" },
+        { "src": "HP-2.png", "size": "full" }
+      ]
+    },
+    "sbd": {
+      "number": "Case 06",
+      "cardTitle": "Understanding how people work with tools",
+      "title": "Understanding how people work with tools",
+      "company": "Stanley Black & Decker · Manufacturing 🇺🇸",
+      "row": 4,
+      "meta": { "Role": "Senior Experience Designer", "Industry": "Manufacturing 🇺🇸", "Duration": "Sprint-based", "Team": "Cross-brand" },
+      "tags": ["IoT", "Mobile App", "Bluetooth", "Multi-brand"],
+      "problem": "I was tasked with designing an app to control a torque wrench tool via Bluetooth, despite having limited knowledge about the tool itself. The challenge included understanding torque logic, while lacking access to users or technical experts for insights. Additionally, the same app needed to accommodate three different brands simultaneously.",
+      "process": "With no UX research available and an ongoing project timeline, we worked directly with technical experts to rapidly understand the domain. We iterated quickly on designs based on their feedback, balancing the constraints of a live project with the need to design coherent experiences across three distinct brand identities — all within the same app architecture.",
+      "outcome": "We completed the design for all three apps on schedule. The smart wrench was simultaneously prototyped and tested. Today, all three apps are available on the market.",
+      "metrics": [
+        { "value": "3", "label": "Brand apps designed in parallel" },
+        { "value": "On time", "label": "Delivered on schedule" },
+        { "value": "🛒", "label": "All 3 apps live on the market" }
+      ],
+      "images": [
+        { "src": "SBD-2.png", "size": "full" }
+      ]
+    }
+  }
+}
