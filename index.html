@@ -775,7 +775,14 @@
     font-size: 20px;
     transition: background 0.2s;
     cursor: default;
-    title: attr(data-name);
+    overflow: hidden;
+    padding: 6px;
+  }
+  .tool-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
   }
   .tool-icon:hover { background: rgba(255,255,255,0.1); }
 
@@ -1418,14 +1425,13 @@
     <div class="fade-up fade-up-delay-1">
       <p class="skill-group-label">Tools of the Trade</p>
       <div class="tools-row">
-        <div class="tool-icon" title="Figma">🎨</div>
-        <div class="tool-icon" title="ChatGPT">🤖</div>
-        <div class="tool-icon" title="Claude AI">⚡</div>
-        <div class="tool-icon" title="Photoshop">🖼</div>
-        <div class="tool-icon" title="Illustrator">✏️</div>
-        <div class="tool-icon" title="After Effects">🎬</div>
-        <div class="tool-icon" title="Notion">📋</div>
-        <div class="tool-icon" title="Miro">🗺</div>
+        <div class="tool-icon" title="Figma"><img src="Figma.png" alt="Figma"></div>
+        <div class="tool-icon" title="Claude AI"><img src="Claude.png" alt="Claude AI"></div>
+        <div class="tool-icon" title="Make"><img src="Figma Make.png" alt="Make"></div>
+        <div class="tool-icon" title="Illustrator"><img src="Illustrator.png" alt="Illustrator"></div>
+        <div class="tool-icon" title="Miro"><img src="Miro.png" alt="Miro"></div>
+        <div class="tool-icon" title="Photoshop"><img src="Photoshop.png" alt="Photoshop"></div>
+        <div class="tool-icon" title="After Effects"><img src="Aftereffects.png" alt="After Effects"></div>
       </div>
     </div>
     <div class="fade-up fade-up-delay-2">
