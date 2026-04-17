@@ -4,10 +4,12 @@ backend:
   branch: main
   base_url: https://christiangaravito-cms-auth.chrisgara4.workers.dev
 
-media_folder: "."
-public_folder: "."
+media_folder: "images"
+public_folder: "images"
 
 collections:
+
+  # ─── CASE STUDIES ───
   - name: "projects"
     label: "Case Studies"
     files:
@@ -37,9 +39,9 @@ collections:
                       - { label: "Team", name: "Team", widget: "string" }
                   - { label: "Tags", name: "tags", widget: "list" }
                   - { label: "Row", name: "row", widget: "number", value_type: "int" }
-                  - { label: "Problem", name: "problem", widget: "markdown" }
-                  - { label: "Process", name: "process", widget: "markdown" }
-                  - { label: "Outcome", name: "outcome", widget: "markdown" }
+                  - { label: "Problem", name: "problem", widget: "text" }
+                  - { label: "Process", name: "process", widget: "text" }
+                  - { label: "Outcome", name: "outcome", widget: "text" }
                   - label: "Metrics"
                     name: "metrics"
                     widget: "list"
@@ -50,17 +52,17 @@ collections:
                     name: "images"
                     widget: "list"
                     fields:
-                      - { label: "File", name: "src", widget: "string", hint: "Filename e.g. BLK-1.png" }
+                      - { label: "File path", name: "src", widget: "string", hint: "e.g. images/blackrock/BLK-1.png" }
                       - label: "Size"
                         name: "size"
                         widget: "select"
                         options: ["full", "half", "small"]
                         default: "full"
-              - label: "BDO"
+              - label: "BDO / Banco de Occidente"
                 name: "bdo"
                 widget: "object"
                 fields: *project_fields
-              - label: "Blink"
+              - label: "Blink EV"
                 name: "blink"
                 widget: "object"
                 fields: *project_fields
@@ -77,9 +79,11 @@ collections:
                 widget: "object"
                 fields: *project_fields
 
+  # ─── SITE SETTINGS ───
   - name: "site"
     label: "Site Settings"
     files:
+
       - name: "hero"
         label: "Hero & Stats"
         file: "data.json"
@@ -88,11 +92,9 @@ collections:
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
               - { label: "Badge text", name: "badge", widget: "string" }
               - { label: "Location", name: "location", widget: "string" }
-              - { label: "Description", name: "description", widget: "markdown" }
+              - { label: "Description (HTML allowed)", name: "description", widget: "text" }
           - label: "Stats"
             name: "stats"
             widget: "list"
@@ -100,3 +102,47 @@ collections:
               - { label: "Number", name: "number", widget: "string" }
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Context", name: "context", widget: "string" }
+
+      - name: "about"
+        label: "About & Experience"
+        file: "data.json"
+        fields:
+          - label: "About"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Bio", name: "bio", widget: "text" }
+              - label: "Timeline"
+                name: "timeline"
+                widget: "list"
+                fields:
+                  - { label: "Date range", name: "date", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string" }
+                  - { label: "Company", name: "company", widget: "string" }
+                  - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "data.json"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role & Company", name: "role", widget: "string" }
+
+      - name: "contact"
+        label: "Contact Section"
+        file: "data.json"
+        fields:
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }

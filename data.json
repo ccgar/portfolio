@@ -296,5 +296,64 @@
       "company": "Stanley Black & Decker · Manufacturing 🇺🇸",
       "problem": "I was tasked with designing an app to control a torque wrench tool via Bluetooth, despite having limited knowledge about the tool itself. The challenge included understanding torque logic, while lacking access to users or technical experts for insights. Additionally, the same app needed to accommodate three different brands simultaneously."
     }
+  },
+  "about": {
+    "bio": "My skill set includes wireframe and prototype development, backed by extensive knowledge in user research and testing. I've contributed to customer retention and business growth in sectors like Fintech, Insurance, and Retail. I've effectively led teams in delivering key UX insights and design deliverables.\n\nRecently, I've integrated AI tools into my design workflow — from research to delivery — to enhance quality, expand ideas, and align work with business objectives, without compromising on quality or human touch.",
+    "timeline": [
+      {
+        "date": "2025 — Now",
+        "role": "Lead Designer",
+        "company": "EPAM Systems",
+        "desc": "Supporting Pre-sales and AI initiatives, leading design strategy for new business opportunities and AI-driven product experiences."
+      },
+      {
+        "date": "2024 — 2025",
+        "role": "Lead UX Designer — EPAM @ BlackRock",
+        "company": "EPAM Systems",
+        "desc": "Leading UX initiatives within the ETF's Platform. Designing new user flows and enhancing experiences for diverse stakeholders who engage daily with the platform."
+      },
+      {
+        "date": "2023 — 2024",
+        "role": "Senior Experience Designer",
+        "company": "Stellar Elements, an AMDOCS company",
+        "desc": "Designed, researched and validated digital experiences meeting clear business objectives in e-commerce, AI and technology projects."
+      },
+      {
+        "date": "2022 — 2023",
+        "role": "Senior Experience Designer",
+        "company": "Mvnifest",
+        "desc": "Led the discovery process to understand user needs in the creation of a new Catalog/Warehouse/Sales channel management system."
+      },
+      {
+        "date": "2020 — 2022",
+        "role": "Senior Experience Designer",
+        "company": "HUGE",
+        "desc": "Lead research, user testing and flow design activities for client projects in insurance, e-commerce and partners such as Google."
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Christian led and exceeded the expectations of his participation in the Design System project for HUGE doing a deep research about it and proposing a clear Roadmap for the implementation of the next stages applying all his knowledge and tools of the Design Thinking methodology.",
+      "name": "Bryan Le",
+      "role": "Global Executive Creative Director, HUGE"
+    },
+    {
+      "quote": "For creating a visually appealing, user-centric experience and coordinating a successful design and content strategy. I can say that working with Christian was an amazing experience.",
+      "name": "Amber Qalagari",
+      "role": "Senior Content Strategist, Stellar Elements"
+    },
+    {
+      "quote": "Christian is an intelligent and talented designer and was a pleasure to work with. He worked in my team on a very technical and challenging role as a design lead. I was frequently pleasantly surprised about the speed and quality of Christian's work. Christian demonstrated an excellent balance of autonomy combined with collaboration — proactively sharing work and seeking feedback. He has an excellent eye for design and regularly went above and beyond with his design deliverables.",
+      "name": "Nick Matterson",
+      "role": "Director of User Experience Design, BlackRock"
+    }
+  ],
+  "contact": {
+    "eyebrow": "Let's work together",
+    "title": "Let's build something great.",
+    "subtitle": "Open to senior remote contractor roles with US & European companies. Available for design systems, UX strategy, and product design.",
+    "email": "chrisgara4@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/garavitochristian/"
   }
 }

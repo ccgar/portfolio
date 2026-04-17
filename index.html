@@ -1203,7 +1203,7 @@
   </div>
 
   <!-- STATS BENTO -->
-  <div class="stats-bento fade-up fade-up-delay-3">
+  <div class="stats-bento fade-up fade-up-delay-3" id="stats-bento">
     <div class="stat-card">
       <span class="stat-number">12+</span>
       <span class="stat-label">Years leading design</span>
@@ -1468,12 +1468,12 @@
       </div>
     </div>
     <div class="about-right">
-      <p class="about-bio fade-up">
+      <p class="about-bio fade-up" id="about-bio">
         My skill set includes wireframe and prototype development, backed by extensive knowledge in user research and testing. I've contributed to customer retention and business growth in sectors like Fintech, Insurance, and Retail. I've effectively led teams in delivering key UX insights and design deliverables.
         <br><br>
         Recently, I've integrated AI tools into my design workflow — from research to delivery — to enhance quality, expand ideas, and align work with business objectives, without compromising on quality or human touch.
       </p>
-      <div class="timeline fade-up fade-up-delay-1">
+      <div class="timeline fade-up fade-up-delay-1" id="timeline">
         <p class="timeline-label">Experience</p>
         <div class="timeline-item">
           <span class="timeline-date">2025 — Now</span>
@@ -1614,7 +1614,7 @@
     <div class="section-label">Word of Mouth</div>
     <h2 class="testimonials-title">What collaborators say about working with me</h2>
   </div>
-  <div class="testimonials-grid">
+  <div class="testimonials-grid" id="testimonials-grid">
     <div class="testimonial-card fade-up">
       <p class="testimonial-quote">Christian led and exceeded the expectations of his participation in the Design System project for HUGE doing a deep research about it and proposing a clear Roadmap for the implementation of the next stages applying all his knowledge and tools of the Design Thinking methodology.</p>
       <div class="testimonial-author">
@@ -1642,9 +1642,9 @@
 <!-- CONTACT -->
 <section id="contact">
   <p class="contact-eyebrow fade-up">Let's work together</p>
-  <h2 class="contact-title fade-up fade-up-delay-1">Let's build<br>something<br>great.</h2>
-  <p class="contact-sub fade-up fade-up-delay-2">Open to senior remote contractor roles with US &amp; European companies. Available for design systems, UX strategy, and product design.</p>
-  <a href="mailto:chrisgara4@gmail.com" class="contact-cta fade-up fade-up-delay-3">
+  <h2 class="contact-title fade-up fade-up-delay-1" id="contact-title">Let's build<br>something<br>great.</h2>
+  <p class="contact-sub fade-up fade-up-delay-2" id="contact-sub">Open to senior remote contractor roles with US &amp; European companies. Available for design systems, UX strategy, and product design.</p>
+  <a href="mailto:chrisgara4@gmail.com" class="contact-cta fade-up fade-up-delay-3" id="contact-cta">
     Send me a message
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
@@ -1686,13 +1686,79 @@
       projects = data.projects;
       renderCards();
       attachCardHandlers();
+      renderHero(data);
+      renderStats(data.stats);
+      renderAbout(data.about);
+      renderTestimonials(data.testimonials);
+      renderContact(data.contact);
     })
     .catch(() => {
-      // fallback to inline data if fetch fails
       projects = _projects_inline_removed;
       renderCards();
       attachCardHandlers();
     });
+
+  function renderHero(data) {
+    if (!data || !data.hero) return;
+    const h = data.hero;
+    const desc = document.getElementById('hero-desc');
+    if (desc && h.description) desc.innerHTML = h.description;
+  }
+
+  function renderStats(stats) {
+    if (!stats) return;
+    const bento = document.getElementById('stats-bento');
+    if (!bento) return;
+    bento.innerHTML = stats.map(s => `
+      <div class="stat-card">
+        <span class="stat-number">${s.number}</span>
+        <span class="stat-label">${s.label}</span>
+        <span class="stat-context">${s.context}</span>
+      </div>`).join('');
+  }
+
+  function renderAbout(about) {
+    if (!about) return;
+    const bio = document.getElementById('about-bio');
+    if (bio && about.bio) bio.innerHTML = about.bio.replace(/\n\n/g, '<br><br>');
+    const timeline = document.getElementById('timeline');
+    if (timeline && about.timeline) {
+      timeline.innerHTML = '<p class="timeline-label">Experience</p>' +
+        about.timeline.map(t => `
+          <div class="timeline-item">
+            <span class="timeline-date">${t.date}</span>
+            <div>
+              <p class="timeline-role">${t.role}</p>
+              <p class="timeline-company">${t.company}</p>
+              <p class="timeline-desc">${t.desc}</p>
+            </div>
+          </div>`).join('');
+    }
+  }
+
+  function renderTestimonials(testimonials) {
+    if (!testimonials) return;
+    const grid = document.getElementById('testimonials-grid');
+    if (!grid) return;
+    grid.innerHTML = testimonials.map((t, i) => `
+      <div class="testimonial-card fade-up${i > 0 ? ' fade-up-delay-' + i : ''}">
+        <p class="testimonial-quote">${t.quote}</p>
+        <div class="testimonial-author">
+          <span class="author-name">${t.name}</span>
+          <span class="author-role">${t.role}</span>
+        </div>
+      </div>`).join('');
+  }
+
+  function renderContact(contact) {
+    if (!contact) return;
+    const title = document.getElementById('contact-title');
+    const sub   = document.getElementById('contact-sub');
+    const cta   = document.getElementById('contact-cta');
+    if (title && contact.title) title.innerHTML = contact.title.replace(/\n/g, '<br>');
+    if (sub   && contact.subtitle) sub.textContent = contact.subtitle;
+    if (cta   && contact.email) cta.href = 'mailto:' + contact.email;
+  }
 
   const _projects_inline_removed = {
     blackrock: {
