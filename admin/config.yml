@@ -19,7 +19,7 @@ collections:
         fields:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Name", name: "name", widget: "string" }
-          - { label: "Description (use <strong> for highlights)", name: "description", widget: "text" }
+          - { label: "Description (use <strong> for highlights)", name: "description", widget: "markdown" }
           - { label: "Badge", name: "badge", widget: "string" }
           - { label: "Location", name: "location", widget: "string" }
 
@@ -37,7 +37,7 @@ collections:
             fields:
               - { label: "Number", name: "number", widget: "string" }
               - { label: "Label", name: "label", widget: "string" }
-              - { label: "Context", name: "context", widget: "string" }
+              - { label: "Context", name: "context", widget: "markdown" }
 
   # ─── CASE STUDIES ───
   - name: "projects"
@@ -65,9 +65,9 @@ collections:
                   - { label: "Team", name: "Team", widget: "string" }
               - { label: "Tags", name: "tags", widget: "list" }
               - { label: "Row", name: "row", widget: "number", value_type: "int" }
-              - { label: "Problem", name: "problem", widget: "text" }
-              - { label: "Process", name: "process", widget: "text" }
-              - { label: "Outcome", name: "outcome", widget: "text" }
+              - { label: "Problem", name: "problem", widget: "markdown" }
+              - { label: "Process", name: "process", widget: "markdown" }
+              - { label: "Outcome", name: "outcome", widget: "markdown" }
               - label: "Metrics"
                 name: "metrics"
                 widget: "list"
@@ -135,7 +135,7 @@ collections:
             name: "root"
             widget: "list"
             fields:
-              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Quote", name: "quote", widget: "markdown" }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role & Company", name: "role", widget: "string" }
 
