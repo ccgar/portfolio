@@ -23,24 +23,8 @@
     "title": "Expediting the ALGO Dashboard Lifecycle",
     "images": [
       {
-        "size": "half",
-        "src": "images/step-1-and-2.png"
-      },
-      {
-        "size": "half",
-        "src": "images/step-3.png"
-      },
-      {
-        "size": "half",
-        "src": "images/step-4.png"
-      },
-      {
-        "size": "half",
-        "src": "images/step-5-and-6.png"
-      },
-      {
-        "size": "half",
-        "src": "images/step-7.png"
+        "size": "full",
+        "src": "images/blackrockai.png"
       }
     ],
     "tags": [
