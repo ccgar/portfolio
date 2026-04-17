@@ -78,7 +78,7 @@ collections:
                 name: "images"
                 widget: "list"
                 fields:
-                  - { label: "File path", name: "src", widget: "string" }
+                  - { label: "File path", name: "src", widget: "image" }
                   - label: "Size"
                     name: "size"
                     widget: "select"
@@ -113,7 +113,7 @@ collections:
         label: "About & Experience"
         file: "about.json"
         fields:
-          - { label: "Bio", name: "bio", widget: "text" }
+          - { label: "Bio", name: "bio", widget: "markdown" }
           - label: "Timeline"
             name: "timeline"
             widget: "list"
@@ -121,7 +121,7 @@ collections:
               - { label: "Date range", name: "date", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
               - { label: "Company", name: "company", widget: "string" }
-              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Description", name: "desc", widget: "markdown" }
 
   # ─── TESTIMONIALS ───
   - name: "testimonials"
