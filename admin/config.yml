@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: ccgar/ccgar.github.io
+  repo: ccgar/portfolio
   branch: main
   base_url: https://christiangaravito-cms-auth.chrisgara4.workers.dev
 
