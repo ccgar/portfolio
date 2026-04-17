@@ -1681,32 +1681,36 @@
   document.querySelectorAll('#hero .fade-up').forEach(el => setTimeout(() => el.classList.add('visible'), 100));
   document.querySelectorAll('.fade-up:not(#hero .fade-up)').forEach(el => observer.observe(el));
 
-  // ─── CASE STUDY DATA (loaded from data.json) ───
+  // ─── CASE STUDY DATA (loaded from split JSON files) ───
   let projects = {};
+  const v = '?v=' + Date.now();
 
-  fetch('data.json?v=' + Date.now())
-    .then(r => r.json())
-    .then(data => {
-      projects = data.projects;
-      renderCards();
-      attachCardHandlers();
-      renderHero(data);
-      renderStats(data.stats);
-      renderAbout(data.about);
-      renderTestimonials(data.testimonials);
-      renderContact(data.contact);
-    })
-    .catch(() => {
-      projects = _projects_inline_removed;
-      renderCards();
-      attachCardHandlers();
-    });
+  Promise.all([
+    fetch('hero.json' + v).then(r => r.json()),
+    fetch('stats.json' + v).then(r => r.json()),
+    fetch('projects.json' + v).then(r => r.json()),
+    fetch('about.json' + v).then(r => r.json()),
+    fetch('testimonials.json' + v).then(r => r.json()),
+    fetch('contact.json' + v).then(r => r.json())
+  ]).then(([hero, stats, projs, about, testimonials, contact]) => {
+    projects = projs;
+    renderCards();
+    attachCardHandlers();
+    renderHero(hero);
+    renderStats(stats);
+    renderAbout(about);
+    renderTestimonials(testimonials);
+    renderContact(contact);
+  }).catch(() => {
+    projects = _projects_inline_removed;
+    renderCards();
+    attachCardHandlers();
+  });
 
-  function renderHero(data) {
-    if (!data || !data.hero) return;
-    const h = data.hero;
+  function renderHero(hero) {
+    if (!hero) return;
     const desc = document.getElementById('hero-desc');
-    if (desc && h.description) desc.innerHTML = h.description;
+    if (desc && hero.description) desc.innerHTML = hero.description;
   }
 
   function renderStats(stats) {

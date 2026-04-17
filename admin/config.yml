@@ -9,128 +9,146 @@ public_folder: "images"
 
 collections:
 
-  # ─── EVERYTHING IN ONE FILE ───
-  - name: "content"
-    label: "Content"
+  # ─── HERO ───
+  - name: "hero"
+    label: "Hero"
     files:
-
-      - name: "data"
-        label: "All Site Content"
-        file: "data.json"
+      - name: "hero"
+        label: "Hero"
+        file: "hero.json"
         fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Description (use <strong> for highlights)", name: "description", widget: "text" }
+          - { label: "Badge", name: "badge", widget: "string" }
+          - { label: "Location", name: "location", widget: "string" }
 
-          # HERO
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Badge", name: "badge", widget: "string" }
-              - { label: "Location", name: "location", widget: "string" }
-              - { label: "Description (use <strong> for highlights)", name: "description", widget: "text" }
-
-          # STATS
+  # ─── STATS ───
+  - name: "stats"
+    label: "Stats"
+    files:
+      - name: "stats"
+        label: "Stats"
+        file: "stats.json"
+        fields:
           - label: "Stats"
-            name: "stats"
+            name: "root"
             widget: "list"
             fields:
               - { label: "Number", name: "number", widget: "string" }
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Context", name: "context", widget: "string" }
 
-          # PROJECTS
-          - label: "Projects"
-            name: "projects"
+  # ─── CASE STUDIES ───
+  - name: "projects"
+    label: "Case Studies"
+    files:
+      - name: "projects"
+        label: "Case Studies"
+        file: "projects.json"
+        fields:
+          - label: "BlackRock"
+            name: "blackrock"
             widget: "object"
-            fields:
-              - label: "BlackRock"
-                name: "blackrock"
+            fields: &project_fields
+              - { label: "Case Number", name: "number", widget: "string" }
+              - { label: "Card Title", name: "cardTitle", widget: "string" }
+              - { label: "Full Title", name: "title", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - label: "Meta"
+                name: "meta"
                 widget: "object"
-                fields: &project_fields
-                  - { label: "Case Number", name: "number", widget: "string" }
-                  - { label: "Card Title", name: "cardTitle", widget: "string" }
-                  - { label: "Full Title", name: "title", widget: "string" }
-                  - { label: "Company", name: "company", widget: "string" }
-                  - label: "Meta"
-                    name: "meta"
-                    widget: "object"
-                    fields:
-                      - { label: "Role", name: "Role", widget: "string" }
-                      - { label: "Industry", name: "Industry", widget: "string" }
-                      - { label: "Duration", name: "Duration", widget: "string" }
-                      - { label: "Team", name: "Team", widget: "string" }
-                  - { label: "Tags", name: "tags", widget: "list" }
-                  - { label: "Row", name: "row", widget: "number", value_type: "int" }
-                  - { label: "Problem", name: "problem", widget: "text" }
-                  - { label: "Process", name: "process", widget: "text" }
-                  - { label: "Outcome", name: "outcome", widget: "text" }
-                  - label: "Metrics"
-                    name: "metrics"
-                    widget: "list"
-                    fields:
-                      - { label: "Value", name: "value", widget: "string" }
-                      - { label: "Label", name: "label", widget: "string" }
-                  - label: "Images"
-                    name: "images"
-                    widget: "list"
-                    fields:
-                      - { label: "File path", name: "src", widget: "string" }
-                      - label: "Size"
-                        name: "size"
-                        widget: "select"
-                        options: ["full", "half", "small"]
-                        default: "full"
-              - label: "BDO"
-                name: "bdo"
-                widget: "object"
-                fields: *project_fields
-              - label: "Blink"
-                name: "blink"
-                widget: "object"
-                fields: *project_fields
-              - label: "RIMAC"
-                name: "rimac"
-                widget: "object"
-                fields: *project_fields
-              - label: "HP AI"
-                name: "hpai"
-                widget: "object"
-                fields: *project_fields
-              - label: "Stanley Black & Decker"
-                name: "sbd"
-                widget: "object"
-                fields: *project_fields
-
-          # ABOUT
-          - label: "About"
-            name: "about"
-            widget: "object"
-            fields:
-              - { label: "Bio", name: "bio", widget: "text" }
-              - label: "Timeline"
-                name: "timeline"
+                fields:
+                  - { label: "Role", name: "Role", widget: "string" }
+                  - { label: "Industry", name: "Industry", widget: "string" }
+                  - { label: "Duration", name: "Duration", widget: "string" }
+                  - { label: "Team", name: "Team", widget: "string" }
+              - { label: "Tags", name: "tags", widget: "list" }
+              - { label: "Row", name: "row", widget: "number", value_type: "int" }
+              - { label: "Problem", name: "problem", widget: "text" }
+              - { label: "Process", name: "process", widget: "text" }
+              - { label: "Outcome", name: "outcome", widget: "text" }
+              - label: "Metrics"
+                name: "metrics"
                 widget: "list"
                 fields:
-                  - { label: "Date range", name: "date", widget: "string" }
-                  - { label: "Role", name: "role", widget: "string" }
-                  - { label: "Company", name: "company", widget: "string" }
-                  - { label: "Description", name: "desc", widget: "text" }
+                  - { label: "Value", name: "value", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - { label: "File path", name: "src", widget: "string" }
+                  - label: "Size"
+                    name: "size"
+                    widget: "select"
+                    options: ["full", "half", "small"]
+                    default: "full"
+          - label: "BDO"
+            name: "bdo"
+            widget: "object"
+            fields: *project_fields
+          - label: "Blink"
+            name: "blink"
+            widget: "object"
+            fields: *project_fields
+          - label: "RIMAC"
+            name: "rimac"
+            widget: "object"
+            fields: *project_fields
+          - label: "HP AI"
+            name: "hpai"
+            widget: "object"
+            fields: *project_fields
+          - label: "Stanley Black & Decker"
+            name: "sbd"
+            widget: "object"
+            fields: *project_fields
 
-          # TESTIMONIALS
+  # ─── ABOUT & EXPERIENCE ───
+  - name: "about"
+    label: "About & Experience"
+    files:
+      - name: "about"
+        label: "About & Experience"
+        file: "about.json"
+        fields:
+          - { label: "Bio", name: "bio", widget: "text" }
+          - label: "Timeline"
+            name: "timeline"
+            widget: "list"
+            fields:
+              - { label: "Date range", name: "date", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+  # ─── TESTIMONIALS ───
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - name: "testimonials"
+        label: "Testimonials"
+        file: "testimonials.json"
+        fields:
           - label: "Testimonials"
-            name: "testimonials"
+            name: "root"
             widget: "list"
             fields:
               - { label: "Quote", name: "quote", widget: "text" }
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role & Company", name: "role", widget: "string" }
 
-          # CONTACT
-          - label: "Contact"
-            name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Subtitle", name: "subtitle", widget: "text" }
-              - { label: "Email", name: "email", widget: "string" }
-              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+  # ─── CONTACT ───
+  - name: "contact"
+    label: "Contact"
+    files:
+      - name: "contact"
+        label: "Contact"
+        file: "contact.json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
