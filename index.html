@@ -91,11 +91,11 @@
 
   /* ─── HERO ─── */
   #hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 60px 0;
+    padding: 120px 60px 0;
     position: relative;
     overflow: hidden;
   }
@@ -115,12 +115,12 @@
     margin-bottom: 20px;
   }
   .hero-name {
-    font-size: clamp(72px, 10vw, 140px);
+    font-size: clamp(60px, 7.5vw, 110px);
     font-weight: 800;
     line-height: 0.92;
     letter-spacing: -0.04em;
     color: var(--text);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
   .hero-name span { color: var(--highlight); }
   .hero-row {
@@ -1430,7 +1430,7 @@
 <div id="companies">
   <p class="companies-title">Companies I've worked with</p>
   <div class="companies-grid">
-    <div class="company-item"><img src="images/blk/BLK_logo.png" alt="BlackRock"></div>
+    <div class="company-item"><img src="images/blackrock/BLK_logo.png" alt="BlackRock"></div>
     <div class="company-item"><img src="images/hp/hp_logo.png" alt="HP"></div>
     <div class="company-item"><img src="images/google/Google_logo.png" alt="Google"></div>
     <div class="company-item"><img src="images/sbd/SBD_logo.png" alt="Stanley Black & Decker"></div>
@@ -1681,8 +1681,19 @@
   let projects = {};
 
   fetch('data.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      projects = data.projects;
+      renderCards();
+      attachCardHandlers();
+    })
+    .catch(() => {
+      // fallback to inline data if fetch fails
+      projects = _projects_inline_removed;
+      renderCards();
+      attachCardHandlers();
+    });
 
-  // placeholder so syntax below still works before fetch
   const _projects_inline_removed = {
     blackrock: {
       number: 'Case 01',
