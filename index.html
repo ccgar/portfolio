@@ -135,6 +135,10 @@
     color: var(--muted);
     line-height: 1.7;
   }
+  .hero-desc strong {
+    color: #c8ff00;
+    font-weight: 600;
+  }
   .hero-desc-wrap { position: relative; }
   .read-more-btn {
     display: none;
@@ -1740,8 +1744,8 @@
     if (!testimonials) return;
     const grid = document.getElementById('testimonials-grid');
     if (!grid) return;
-    grid.innerHTML = testimonials.map((t, i) => `
-      <div class="testimonial-card fade-up${i > 0 ? ' fade-up-delay-' + i : ''}">
+    grid.innerHTML = testimonials.map(t => `
+      <div class="testimonial-card">
         <p class="testimonial-quote">${t.quote}</p>
         <div class="testimonial-author">
           <span class="author-name">${t.name}</span>

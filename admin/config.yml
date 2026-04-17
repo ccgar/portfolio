@@ -9,14 +9,35 @@ public_folder: "images"
 
 collections:
 
-  # ─── CASE STUDIES ───
-  - name: "projects"
-    label: "Case Studies"
+  # ─── EVERYTHING IN ONE FILE ───
+  - name: "content"
+    label: "Content"
     files:
-      - name: "all_projects"
-        label: "All Projects"
+
+      - name: "data"
+        label: "All Site Content"
         file: "data.json"
         fields:
+
+          # HERO
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Badge", name: "badge", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description (use <strong> for highlights)", name: "description", widget: "text" }
+
+          # STATS
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Context", name: "context", widget: "string" }
+
+          # PROJECTS
           - label: "Projects"
             name: "projects"
             widget: "object"
@@ -29,7 +50,7 @@ collections:
                   - { label: "Card Title", name: "cardTitle", widget: "string" }
                   - { label: "Full Title", name: "title", widget: "string" }
                   - { label: "Company", name: "company", widget: "string" }
-                  - label: "Meta Data"
+                  - label: "Meta"
                     name: "meta"
                     widget: "object"
                     fields:
@@ -52,17 +73,17 @@ collections:
                     name: "images"
                     widget: "list"
                     fields:
-                      - { label: "File path", name: "src", widget: "string", hint: "e.g. images/blackrock/BLK-1.png" }
+                      - { label: "File path", name: "src", widget: "string" }
                       - label: "Size"
                         name: "size"
                         widget: "select"
                         options: ["full", "half", "small"]
                         default: "full"
-              - label: "BDO / Banco de Occidente"
+              - label: "BDO"
                 name: "bdo"
                 widget: "object"
                 fields: *project_fields
-              - label: "Blink EV"
+              - label: "Blink"
                 name: "blink"
                 widget: "object"
                 fields: *project_fields
@@ -79,34 +100,7 @@ collections:
                 widget: "object"
                 fields: *project_fields
 
-  # ─── SITE SETTINGS ───
-  - name: "site"
-    label: "Site Settings"
-    files:
-
-      - name: "hero"
-        label: "Hero & Stats"
-        file: "data.json"
-        fields:
-          - label: "Hero"
-            name: "hero"
-            widget: "object"
-            fields:
-              - { label: "Badge text", name: "badge", widget: "string" }
-              - { label: "Location", name: "location", widget: "string" }
-              - { label: "Description (HTML allowed)", name: "description", widget: "text" }
-          - label: "Stats"
-            name: "stats"
-            widget: "list"
-            fields:
-              - { label: "Number", name: "number", widget: "string" }
-              - { label: "Label", name: "label", widget: "string" }
-              - { label: "Context", name: "context", widget: "string" }
-
-      - name: "about"
-        label: "About & Experience"
-        file: "data.json"
-        fields:
+          # ABOUT
           - label: "About"
             name: "about"
             widget: "object"
@@ -121,10 +115,7 @@ collections:
                   - { label: "Company", name: "company", widget: "string" }
                   - { label: "Description", name: "desc", widget: "text" }
 
-      - name: "testimonials"
-        label: "Testimonials"
-        file: "data.json"
-        fields:
+          # TESTIMONIALS
           - label: "Testimonials"
             name: "testimonials"
             widget: "list"
@@ -133,10 +124,7 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role & Company", name: "role", widget: "string" }
 
-      - name: "contact"
-        label: "Contact Section"
-        file: "data.json"
-        fields:
+          # CONTACT
           - label: "Contact"
             name: "contact"
             widget: "object"
