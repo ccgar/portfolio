@@ -27,9 +27,19 @@ collections:
                   - { label: "Card Title", name: "cardTitle", widget: "string" }
                   - { label: "Full Title", name: "title", widget: "string" }
                   - { label: "Company", name: "company", widget: "string" }
-                  - { label: "Problem", name: "problem", widget: "markdown" } # CORREGIDO
-                  - { label: "Process", name: "process", widget: "markdown" } # CORREGIDO
-                  - { label: "Outcome", name: "outcome", widget: "markdown" } # CORREGIDO
+                  - label: "Meta Data"
+                    name: "meta"
+                    widget: "object"
+                    fields:
+                      - { label: "Role", name: "Role", widget: "string" }
+                      - { label: "Industry", name: "Industry", widget: "string" }
+                      - { label: "Duration", name: "Duration", widget: "string" }
+                      - { label: "Team", name: "Team", widget: "string" }
+                  - { label: "Tags", name: "tags", widget: "list" }
+                  - { label: "Row", name: "row", widget: "number", value_type: "int" }
+                  - { label: "Problem", name: "problem", widget: "markdown" }
+                  - { label: "Process", name: "process", widget: "markdown" }
+                  - { label: "Outcome", name: "outcome", widget: "markdown" }
                   - label: "Metrics"
                     name: "metrics"
                     widget: "list"
@@ -78,5 +88,15 @@ collections:
             name: "hero"
             widget: "object"
             fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
               - { label: "Badge text", name: "badge", widget: "string" }
               - { label: "Location", name: "location", widget: "string" }
+              - { label: "Description", name: "description", widget: "markdown" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Context", name: "context", widget: "string" }
