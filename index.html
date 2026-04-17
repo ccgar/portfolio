@@ -1680,13 +1680,7 @@
   // ─── CASE STUDY DATA (loaded from data.json) ───
   let projects = {};
 
-  fetch('data.json')
-    .then(r => r.json())
-    .then(data => {
-      projects = data.projects;
-      renderCards();
-      attachCardHandlers();
-    });
+  fetch('data.json?v=' + Date.now())
 
   // placeholder so syntax below still works before fetch
   const _projects_inline_removed = {
