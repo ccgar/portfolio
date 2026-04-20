@@ -239,12 +239,12 @@
   "rimac": {
     "metrics": [
       {
-        "value": "5",
-        "label": "Stage design process executed"
+        "value": "5+",
+        "label": "Successfully consolidated fragmented services into a single, unified ecosystem vision."
       },
       {
-        "value": "2",
-        "label": "Complete flows designed & prototyped"
+        "value": "6 months",
+        "label": "Delivered a fully validated, high-fidelity prototype, accelerating the business decision-making process."
       },
       {
         "value": "1",
@@ -259,21 +259,27 @@
     },
     "cardTitle": "RIMAC's Wellbeing Value Offer",
     "number": "Case 04",
-    "process": "We executed a five-stage process: Planning (coordinating activities and gathering client context), Discovery (research, interviews, and situation diagnosis), Vision (proposing a direction based on state of the art, contextual factors, and org objectives), Foundations (establishing design systems and user flows), and Design (developing two flows and a validated prototype).\n\nThe project's tight timeframe and technical constraints were addressed by creatively leveraging existing solutions within RIMAC's ecosystem — connecting them rather than building from scratch. Tools included journey mapping, user archetypes, stakeholder interviews, workshops, benchmarking, heuristic evaluations, usability testing, and design systems.",
-    "outcome": "We developed a Wellbeing hub within the RIMAC app, integrating existing services to improve user wellbeing and prevent chronic diseases — creating a seamless extension of their insurance offering that felt personal, trustworthy, and relevant.",
+    "process": "Faced with a tight timeframe and legacy infrastructure, I led a strategy of 'ecosystem orchestration.' Instead of building from scratch, we audited and connected existing internal solutions to create a seamless user journey. Our 5-stage process—from state-of-the-art visioning to high-fidelity validation—focused on identifying the 'connective tissue' between insurance services and preventative health habits.",
+    "outcome": "We successfully launched the Wellbeing Hub, a strategic extension of RIMAC’s core offering that transformed the app into a daily-use health companion. This integration not only improved user sentiment but also positioned RIMAC as a pioneer in preventative care, creating a scalable model for reducing chronic disease risk through proactive digital engagement.\n\n* Strategic Service Integration: I led the consolidation of RIMAC’s fragmented service ecosystem into a single, unified Wellbeing Hub. We successfully integrated high-value legacy services—such as the Chronic Disease Clinic Companion, the Pediatric Care Platform, and Mental Health Support—ensuring a seamless transition from isolated tools to a cohesive, holistic health journey.\n* Engagement-Driven Journey: Developed a cross-journey gamification framework designed to incentivize healthy habits. By mapping multiple touchpoints, we created an experience that rewards proactive wellness, transforming a traditionally reactive insurance relationship into a daily, value-driven engagement model.\n* Privacy-First Risk Identification: We pioneered a non-intrusive diagnostic experience to identify health risks through indirect user behavior analysis, avoiding the friction of traditional medical forms. Built on Privacy-by-Design principles, we empowered users with full data agency, including robust anonymization features to foster deep institutional trust.",
     "title": "RIMAC's Wellbeing Value Offer",
     "images": [
       {
-        "src": "images/rimac/Rimac-1.png",
+        "src": "images/rimac-case-1.png",
         "size": "full",
         "caption": {
-          "title": "",
-          "text": ""
+          "title": "Orchestrating the Wellbeing Ecosystem",
+          "text": "To bridge the gap between reactive insurance and proactive wellness, I developed a comprehensive Service Blueprint. This map visualized the synergy between RIMAC’s fragmented legacy services—including clinical care, pediatric support, and mental health platforms. By identifying these 'connective tissues,' we created a strategic roadmap that aligned technical feasibility with a holistic user journey, ensuring no touchpoint was left isolated.",
+          "position": "bottom-right"
         }
       },
       {
-        "src": "images/rimac/Rimac-2.png",
-        "size": "full"
+        "src": "images/rimac-case-2.png",
+        "size": "full",
+        "caption": {
+          "title": "The Wellbeing Hub (Final UI)",
+          "text": "The final interface transforms the RIMAC app into a personalized health companion. I designed a seamless, high-fidelity experience that integrates gamified behavioral triggers and actionable health data. The UI balances a friendly, trustworthy aesthetic with clear data visualization, allowing users to manage their wellbeing and privacy effortlessly.",
+          "position": "bottom-right"
+        }
       }
     ],
     "tags": [
@@ -284,7 +290,7 @@
     ],
     "row": 3,
     "company": "RIMAC · Insurance 🇵🇪",
-    "problem": "RIMAC, Peru's largest insurance company, tasked us with exploring opportunities to enhance their service ecosystem by offering a cohesive wellbeing solution to complement their insurance services — providing users with personalized experiences that promote healthier lifestyles and offer unique, relevant, and trustworthy coverage."
+    "problem": "RIMAC, Peru’s insurance leader, aimed to pivot from a purely reactive insurance provider to a proactive wellbeing partner. The challenge was to design a cohesive health ecosystem that integrated personalized wellness experiences into the existing app, fostering long-term user engagement and trust while operating within a highly regulated and technically constrained environment."
   },
   "hpai": {
     "metrics": [
