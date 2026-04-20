@@ -26,7 +26,7 @@
         "size": "full",
         "src": "images/blk-case-1.png",
         "caption": {
-          "icon": "🤖🕵🏻‍♂️",
+          "icon": "🤖🧠",
           "title": " Step 1: User Engagement, Design Brief & Prioritization ",
           "text": "* Met with users to gather insights and requirements. \n* Created a Design Brief and prioritized features using meeting transcripts and related content.",
           "pills": [
@@ -40,18 +40,54 @@
         "size": "full",
         "src": "images/blk-case-2.png",
         "caption": {
-          "title": "Step 6: Iterative Design",
-          "text": "Action: Refined designs in Figma Make, incorporating specifications and new ideas.",
+          "title": "Step 2: Flow Analysis",
+          "text": "Analyzed actual user flow and identified pain points.",
           "position": "bottom-right",
-          "icon": "🤖",
+          "icon": "🧠",
           "pills": [
-            "Figma Make"
+            "No AI Tool"
           ]
         }
       },
       {
         "size": "full",
-        "src": "images/blk-case-3.png"
+        "src": "images/blk-case-3.png",
+        "caption": {
+          "icon": "🤖",
+          "title": "Step 3: Initial Design Concepts",
+          "text": "* Generated Figma prompts for initial design concepts. \n* Prompt Coach to craft effective prompts for Figma Make.",
+          "position": "top-left",
+          "pills": [
+            "FIGMA MAKE",
+            "Prompt Coach"
+          ]
+        }
+      },
+      {
+        "size": "full",
+        "caption": {
+          "position": "bottom-left",
+          "icon": "🤖🧠",
+          "title": "Specification Development and Iterative Design",
+          "text": "* Converted design concepts into detailed specifications.\n* Refined designs in Figma Make, incorporating specifications and new ideas.",
+          "pills": [
+            "FIGMA MAKE"
+          ]
+        },
+        "src": "images/blk-case-4.png"
+      },
+      {
+        "size": "full",
+        "caption": {
+          "position": "bottom-left",
+          "icon": "🧠",
+          "title": "Concept Integration",
+          "text": "Designed the final concept by integrating all insights from previous steps.",
+          "pills": [
+            "NO AI TOOL"
+          ]
+        },
+        "src": "images/blk-case-5.png"
       }
     ],
     "tags": [
