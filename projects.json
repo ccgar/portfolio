@@ -31,9 +31,12 @@
         "src": "images/blk-case-2.png",
         "caption": {
           "title": "Step 6: Iterative Design",
-          "text": "Action: Refined designs in Figma Make, incorporating specifications and new ideas. \nAI Tool Used: Figma Make",
+          "text": "Action: Refined designs in Figma Make, incorporating specifications and new ideas.",
           "position": "bottom-right",
-          "icon": "🤖"
+          "icon": "🤖",
+          "pills": [
+            "Figma Make"
+          ]
         }
       },
       {
