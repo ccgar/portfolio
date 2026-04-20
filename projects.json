@@ -62,12 +62,20 @@
     "title": "Understanding the role of personal banking",
     "images": [
       {
-        "src": "images/aval/bdo-1.png",
+        "src": "images/dbo-case-1.png",
         "size": "full"
       },
       {
-        "src": "images/aval/bdo-2.png",
+        "src": "images/dbo-case-2.png",
         "size": "full"
+      },
+      {
+        "size": "half",
+        "src": "images/dbo-case-3.png"
+      },
+      {
+        "size": "half",
+        "src": "images/dbo-case-4.png"
       }
     ],
     "tags": [
