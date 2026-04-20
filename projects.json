@@ -380,13 +380,14 @@
         "caption": {
           "title": "IoT & Hardware Interaction (The UI of Physics)",
           "text": "Designing for IoT and high-precision tools required a deep understanding of real-time data and physical constraints. I translated complex torque logic and Bluetooth connectivity states into an intuitive mobile experience for professional technicians. The focus was on legibility in high-stakes environments and providing instant, actionable feedback to ensure safety and precision during industrial operations.",
-          "icon": "🛠️"
+          "icon": "🛠️",
+          "position": "bottom-right"
         }
       },
       {
         "size": "full",
         "caption": {
-          "position": "bottom-left",
+          "position": "bottom-right",
           "title": "One Architecture, Three Identities",
           "text": "I engineered a multi-tenant design system that allowed a single codebase and design architecture to support three distinct global brands. By decoupling the functional logic from the visual layer, we achieved a seamless 'theming' workflow, ensuring each brand maintained its unique identity while sharing a robust, unified core. This approach maximized development efficiency and ensured cross-brand consistency."
         },
