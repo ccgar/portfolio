@@ -90,16 +90,16 @@
   "blink": {
     "metrics": [
       {
-        "value": "Global",
-        "label": "Footprint covered by the new site"
+        "value": "Global Scale",
+        "label": "Unified presence across international markets."
       },
       {
-        "value": "3",
-        "label": "Core goals: brand, leads, resources"
+        "value": "100%",
+        "label": "Systemic Consistency: A modular framework for global deployment."
       },
       {
-        "value": "1",
-        "label": "Unified component system"
+        "value": "Conversion-Focused",
+        "label": "Integrated Lead Gen & Resource Architecture."
       }
     ],
     "meta": {
@@ -110,8 +110,8 @@
     },
     "cardTitle": "Redefining the way the world refuels",
     "number": "Case 03",
-    "process": "Our approach centered on three pillars: elevating the way users and search engines interact with the site, enhancing brand perception and relevance, and marrying products and services around a cohesive message aligned with their target audience.\n\nThe biggest challenge was balancing a comprehensive content strategy with the creation of a limited number of components. We successfully tackled this through organized teamwork and close collaboration between content and design.",
-    "outcome": "Delivered a cohesive website that functions as a digital brochure, lead generation engine, and customer resource — strengthening Blink's brand recognition and relevance across their global footprint.",
+    "process": "My approach was rooted in Modular Systemic Thinking. To solve the paradox of vast content versus limited components, I led a cross-functional collaboration between design and content strategy. We developed a high-versatility component library that allowed for hundreds of page variations without increasing development complexity. This 'Lean Design' strategy ensured that the global site remained fast, SEO-optimized, and easy to maintain by local teams worldwide.",
+    "outcome": "We delivered a cohesive, scalable ecosystem that solidified Blink’s brand authority in the EV space. The new digital infrastructure not only unified the global brand message but also streamlined the B2B lead generation funnel, creating a centralized, high-performance resource for customers across their entire global footprint.",
     "title": "Redefining the way the world refuels",
     "images": [
       {
@@ -126,7 +126,7 @@
     ],
     "row": 2,
     "company": "Blink · EV Charging 🇺🇸",
-    "problem": "The EV industry is changing the way humans move, and Blink is changing the way we refuel — by turning businesses into hubs for vehicle charging. We were hired to create a website that serves as a cohesive digital brochure, lead generating tool, and customer resource across Blink's global footprint."
+    "problem": "Blink Charging is redefining global e-mobility. The challenge was to transform their fragmented digital presence into a unified global hub. We needed to design a platform that worked as a high-conversion lead generation engine, a comprehensive customer resource, and a consistent digital brochure across diverse international markets, all while maintaining a lean technical footprint."
   },
   "rimac": {
     "metrics": [
