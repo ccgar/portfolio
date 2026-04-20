@@ -679,6 +679,28 @@
     color: rgba(255,255,255,0.72);
     line-height: 1.6;
   }
+  .img-caption-text p { margin-bottom: 4px; }
+  .img-caption-text p:last-child { margin-bottom: 0; }
+  .img-caption-text ul { padding-left: 14px; margin: 2px 0; }
+  .img-caption-text li { font-size: 12px; color: rgba(255,255,255,0.72); margin-bottom: 2px; }
+  .img-caption-text strong { color: #fff; font-weight: 600; }
+  .img-caption-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+  }
+  .img-caption-pill {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #c8ff00;
+    background: rgba(200,255,0,0.1);
+    border: 1px solid rgba(200,255,0,0.25);
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
   .case-metrics {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2009,7 +2031,11 @@
               ${caption.icon  ? `<span class="img-caption-icon">${caption.icon}</span>` : ''}
               ${caption.title ? `<span class="img-caption-title">${caption.title}</span>` : ''}
             </div>` : ''}
-          ${caption.text ? `<p class="img-caption-text">${caption.text}</p>` : ''}
+          ${caption.text ? `<div class="img-caption-text">${marked.parse(caption.text)}</div>` : ''}
+          ${caption.pills && caption.pills.length ? `
+            <div class="img-caption-pills">
+              ${caption.pills.slice(0,3).map(p => `<span class="img-caption-pill">${p}</span>`).join('')}
+            </div>` : ''}
         </div>` : '';
       return src
         ? `<div class="case-img-placeholder ${size}"><img src="${src}" alt="Project screenshot" />${captionHTML}</div>`

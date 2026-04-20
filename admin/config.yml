@@ -92,7 +92,13 @@ collections:
                     fields:
                       - { label: "Icon (emoji)", name: "icon", widget: "string", required: false }
                       - { label: "Title", name: "title", widget: "string", required: false }
-                      - { label: "Text", name: "text", widget: "text", required: false }
+                      - { label: "Text (supports **bold** and bullets)", name: "text", widget: "markdown", required: false }
+                      - label: "Pills (max 3)"
+                        name: "pills"
+                        widget: "list"
+                        required: false
+                        max: 3
+                        field: { label: "Pill", name: "pill", widget: "string" }
                       - label: "Position"
                         name: "position"
                         widget: "select"
