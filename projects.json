@@ -24,7 +24,15 @@
     "images": [
       {
         "size": "full",
-        "src": "images/blk-1.png"
+        "src": "images/blk-case-1.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blk-case-2.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blk-case-3.png"
       }
     ],
     "tags": [
