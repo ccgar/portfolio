@@ -36,7 +36,7 @@
     ],
     "row": 1,
     "company": "BlackRock · 2024 — 2025",
-    "problem": "The objective was to design a high-fidelity monitoring tool capable of processing real-time metrics and compliance alerts without overwhelming the operator. Key challenges included:\n\n* Information Density: Organizing \"Summary Digests\" that incorporate EOD status, compliance breaches, and portfolio performance.\n* Delivery Velocity: Reducing the gap between technical requirement gathering and the delivery of functional prototypes.\n* Complexity Management: Navigating multi-step operational flows while identifying and solving user pain points."
+    "problem": "The objective was to design a high-fidelity monitoring tool capable of processing real-time metrics and compliance alerts without overwhelming the operator. Key challenges included:\n\n* Information Density: Organizing high-density data where a 1% margin of error in reading a compliance alert could result in significant financial risk.\n* Delivery Velocity: Reducing the gap between technical requirement gathering and the delivery of functional prototypes.\n* Complexity Management: Navigating multi-step operational flows while identifying and solving user pain points."
   },
   "bdo": {
     "metrics": [
