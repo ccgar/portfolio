@@ -1764,7 +1764,9 @@
     fetch('testimonials.json' + v).then(r => r.json()),
     fetch('contact.json' + v).then(r => r.json())
   ]).then(([hero, stats, projs, about, testimonials, contact]) => {
-    projects = projs;
+    // Convert array to lookup object by id
+    const cases = projs.cases || Object.values(projs);
+    cases.forEach(c => { projects[c.id] = c; });
     renderCards();
     attachCardHandlers();
     renderHero(hero);
@@ -1977,12 +1979,24 @@
   // ─── RENDER CARD CONTENT FROM DATA ───
   const ARROW_SVG = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>`;
 
+  const ACCENT_COLORS = ['card-accent-blue','card-accent-orange','card-accent-teal','card-accent-red','card-accent-purple','card-accent-lime'];
+
   function renderCards() {
+    const grid = document.getElementById('projects-grid');
+
+    // 1. Fill + set bg for existing hardcoded cards
+    const existingIds = new Set();
     document.querySelectorAll('.project-card[data-project]').forEach(card => {
       const key = card.dataset.project;
+      existingIds.add(key);
       const data = projects[key];
       if (!data) return;
-      const tagsHTML = data.tags.slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('');
+      // Set card background from first image
+      const bgEl = card.querySelector('.card-bg');
+      if (bgEl && data.images && data.images[0]) {
+        bgEl.style.backgroundImage = `url('${data.images[0].src || data.images[0]}')`;
+      }
+      const tagsHTML = (data.tags || []).slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('');
       card.querySelector('.card-content').innerHTML = `
         <div>
           <div class="card-tags">${tagsHTML}</div>
@@ -1991,6 +2005,54 @@
         </div>
         <div class="card-arrow">${ARROW_SVG}</div>`;
     });
+
+    // 2. Find new cases not already in the DOM
+    const newCases = Object.values(projects).filter(p => !existingIds.has(p.id));
+    if (newCases.length > 0) {
+      // Group into pairs (rows of 2)
+      const maxExistingRow = Math.max(...[...existingIds].map(id => projects[id] ? (projects[id].row || 1) : 1));
+      let nextRow = maxExistingRow;
+      let colorIdx = existingIds.size % ACCENT_COLORS.length;
+
+      for (let i = 0; i < newCases.length; i += 2) {
+        nextRow++;
+        const batch = newCases.slice(i, i + 2);
+        let html = '';
+        batch.forEach(data => {
+          const accent = ACCENT_COLORS[colorIdx++ % ACCENT_COLORS.length];
+          const bgStyle = data.images && data.images[0] ? `style="background-image:url('${data.images[0].src || data.images[0]}')"` : '';
+          const tagsHTML = (data.tags || []).slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('');
+          html += `<div class="project-card ${accent} fade-up" data-project="${data.id}">
+            <div class="card-bg" ${bgStyle}></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+              <div>
+                <div class="card-tags">${tagsHTML}</div>
+                <h3 class="card-title">${data.cardTitle || data.title}</h3>
+                <p class="card-company">${data.company}</p>
+              </div>
+              <div class="card-arrow">${ARROW_SVG}</div>
+            </div>
+          </div>`;
+        });
+        html += `<div class="case-panel" id="panel-row-${nextRow}">
+          <div class="case-panel-wrap">
+            <button class="case-panel-close" onclick="closePanel()">✕</button>
+            <div class="case-panel-inner" id="panel-content-${nextRow}"></div>
+          </div>
+        </div>`;
+        grid.insertAdjacentHTML('beforeend', html);
+        // Attach handlers to new cards
+        batch.forEach(data => {
+          const card = grid.querySelector(`[data-project="${data.id}"]`);
+          if (card) card.addEventListener('click', () => openPanel(data.id));
+        });
+      }
+    }
+
+    // 3. Update work count
+    const countEl = document.querySelector('.work-count');
+    if (countEl) countEl.textContent = Object.keys(projects).length + ' projects';
   }
 
   function attachCardHandlers() {
