@@ -24,7 +24,15 @@
     "images": [
       {
         "size": "full",
-        "src": "images/blk-1.png"
+        "src": "images/blk-case-1.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blk-case-2.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blk-case-3.png"
       }
     ],
     "tags": [
@@ -36,21 +44,17 @@
     ],
     "row": 1,
     "company": "BlackRock · 2024 — 2025",
-    "problem": "The objective was to design a high-fidelity monitoring tool capable of processing real-time metrics and compliance alerts without overwhelming the operator. Key challenges included:\n\n* Information Density: Organizing \"Summary Digests\" that incorporate EOD status, compliance breaches, and portfolio performance.\n* Delivery Velocity: Reducing the gap between technical requirement gathering and the delivery of functional prototypes.\n* Complexity Management: Navigating multi-step operational flows while identifying and solving user pain points."
+    "problem": "The objective was to design a high-fidelity monitoring tool capable of processing real-time metrics and compliance alerts without overwhelming the operator. Key challenges included:\n\n* Information Density: Organizing high-density data where a 1% margin of error in reading a compliance alert could result in significant financial risk.\n* Delivery Velocity: Reducing the gap between technical requirement gathering and the delivery of functional prototypes.\n* Complexity Management: Navigating multi-step operational flows while identifying and solving user pain points."
   },
   "bdo": {
     "metrics": [
-      {
-        "value": "3×",
-        "label": "Faster report generation"
-      },
       {
         "value": "28%",
         "label": "Increase in advisor NPS"
       },
       {
-        "value": "6",
-        "label": "New data viz components"
+        "value": "42",
+        "label": "Features migrated to a modernized platform within a 12-month timeframe"
       }
     ],
     "meta": {
@@ -62,16 +66,24 @@
     "cardTitle": "Understanding personal banking",
     "number": "Case 02",
     "process": "The project kicked off with a Discovery Phase focused on understanding user behavior, business priorities, and backend readiness. Through stakeholder interviews, user archetypes, journey mapping, workshops, and benchmarking, we identified a core opportunity: leveraging conversational interfaces and mobile capabilities to make the app the preferred channel for banking users. Our hypothesis was that a chat-based, simple messaging experience would reduce friction and create a more seamless, efficient interaction model. From this research, we defined and proposed a roadmap balancing three critical dimensions — infrastructure readiness, user needs, and business priorities. In the Design Delivery and Testing Phase, we translated insights into a scalable experience system. We ran concept testing and MVP definition cycles, iterating on copies, voice, and tone in close collaboration with the development team. Validation included usability testing, heuristic evaluations, card sorting, user interviews, and hard data from NPS surveys and analytics. The result was a refined, tested design grounded in real user feedback and measurable behavior data.",
-    "outcome": "We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.",
+    "outcome": "We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.\n\nEstablished the first Cross-Platform Design System for the organization, reducing design-to-development handoff time and ensuring 100% brand consistency across all digital touchpoints.\n\nSpearheaded the end-to-end migration of 42 legacy features to a modernized platform within a 12-month timeframe, ensuring system scalability and improved performance.",
     "title": "Understanding the role of personal banking",
     "images": [
       {
-        "src": "images/aval/bdo-1.png",
+        "src": "images/dbo-case-1.png",
         "size": "full"
       },
       {
-        "src": "images/aval/bdo-2.png",
+        "src": "images/dbo-case-2.png",
         "size": "full"
+      },
+      {
+        "size": "half",
+        "src": "images/dbo-case-3.png"
+      },
+      {
+        "size": "half",
+        "src": "images/dbo-case-4.png"
       }
     ],
     "tags": [
@@ -81,21 +93,21 @@
     ],
     "row": 2,
     "company": "BANCO DE OCCIDENTE · 2018-2020",
-    "problem": "While revamping the transactional portal, we acknowledged the persistent need to provide a swift and adaptable mobile solution to meet the ever-growing demand. Therefore, we aimed to discern the role the banks mobile application should play in our clients lives."
+    "problem": "While revamping the transactional portal, we acknowledged the persistent need to provide a swift and adaptable mobile solution to meet the ever-growing demand. Therefore, we aimed to discern the role the banks mobile application should play in our clients lives. <strong>The challenge was to transition a traditional banking portal into a mobile-first ecosystem, overcoming legacy infrastructure constraints to meet a 100% growth in mobile demand.</strong>"
   },
   "blink": {
     "metrics": [
       {
-        "value": "Global",
-        "label": "Footprint covered by the new site"
+        "value": "Global Scale",
+        "label": "Unified presence across international markets."
       },
       {
-        "value": "3",
-        "label": "Core goals: brand, leads, resources"
+        "value": "100%",
+        "label": "Systemic Consistency: A modular framework for global deployment."
       },
       {
-        "value": "1",
-        "label": "Unified component system"
+        "value": "Conversion-Focused",
+        "label": "Integrated Lead Gen & Resource Architecture."
       }
     ],
     "meta": {
@@ -106,13 +118,21 @@
     },
     "cardTitle": "Redefining the way the world refuels",
     "number": "Case 03",
-    "process": "Our approach centered on three pillars: elevating the way users and search engines interact with the site, enhancing brand perception and relevance, and marrying products and services around a cohesive message aligned with their target audience.\n\nThe biggest challenge was balancing a comprehensive content strategy with the creation of a limited number of components. We successfully tackled this through organized teamwork and close collaboration between content and design.",
-    "outcome": "Delivered a cohesive website that functions as a digital brochure, lead generation engine, and customer resource — strengthening Blink's brand recognition and relevance across their global footprint.",
+    "process": "My approach was rooted in Modular Systemic Thinking. To solve the paradox of vast content versus limited components, I led a cross-functional collaboration between design and content strategy. We developed a high-versatility component library that allowed for hundreds of page variations without increasing development complexity. This 'Lean Design' strategy ensured that the global site remained fast, SEO-optimized, and easy to maintain by local teams worldwide.",
+    "outcome": "We delivered a cohesive, scalable ecosystem that solidified Blink’s brand authority in the EV space. The new digital infrastructure not only unified the global brand message but also streamlined the B2B lead generation funnel, creating a centralized, high-performance resource for customers across their entire global footprint.",
     "title": "Redefining the way the world refuels",
     "images": [
       {
-        "src": "images/blink/Blink-2.png",
-        "size": "full"
+        "size": "full",
+        "src": "images/blink-case-1.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blink-case-2.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blink-case-3.png"
       }
     ],
     "tags": [
@@ -122,7 +142,7 @@
     ],
     "row": 2,
     "company": "Blink · EV Charging 🇺🇸",
-    "problem": "The EV industry is changing the way humans move, and Blink is changing the way we refuel — by turning businesses into hubs for vehicle charging. We were hired to create a website that serves as a cohesive digital brochure, lead generating tool, and customer resource across Blink's global footprint."
+    "problem": "Blink Charging is redefining global e-mobility. The challenge was to transform their fragmented digital presence into a unified global hub. We needed to design a platform that worked as a high-conversion lead generation engine, a comprehensive customer resource, and a consistent digital brochure across diverse international markets, all while maintaining a lean technical footprint."
   },
   "rimac": {
     "metrics": [
