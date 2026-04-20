@@ -332,7 +332,8 @@
         "size": "full",
         "caption": {
           "title": "The Integration Marketplace",
-          "text": "Modular Interoperability: A cohesive system for plugging AI into professional workflows."
+          "text": "Modular Interoperability: A cohesive system for plugging AI into professional workflows.",
+          "position": "bottom-right"
         }
       }
     ],
