@@ -43,6 +43,10 @@
       {
         "value": "28%",
         "label": "Increase in advisor NPS"
+      },
+      {
+        "value": "42",
+        "label": "Features migrated to a modernized platform within a 12-month timeframe"
       }
     ],
     "meta": {
@@ -54,7 +58,7 @@
     "cardTitle": "Understanding personal banking",
     "number": "Case 02",
     "process": "The project kicked off with a Discovery Phase focused on understanding user behavior, business priorities, and backend readiness. Through stakeholder interviews, user archetypes, journey mapping, workshops, and benchmarking, we identified a core opportunity: leveraging conversational interfaces and mobile capabilities to make the app the preferred channel for banking users. Our hypothesis was that a chat-based, simple messaging experience would reduce friction and create a more seamless, efficient interaction model. From this research, we defined and proposed a roadmap balancing three critical dimensions — infrastructure readiness, user needs, and business priorities. In the Design Delivery and Testing Phase, we translated insights into a scalable experience system. We ran concept testing and MVP definition cycles, iterating on copies, voice, and tone in close collaboration with the development team. Validation included usability testing, heuristic evaluations, card sorting, user interviews, and hard data from NPS surveys and analytics. The result was a refined, tested design grounded in real user feedback and measurable behavior data.",
-    "outcome": "We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.",
+    "outcome": "We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.\n\nEstablished the first Cross-Platform Design System for the organization, reducing design-to-development handoff time and ensuring 100% brand consistency across all digital touchpoints.\n\nSpearheaded the end-to-end migration of 42 legacy features to a modernized platform within a 12-month timeframe, ensuring system scalability and improved performance.",
     "title": "Understanding the role of personal banking",
     "images": [
       {
