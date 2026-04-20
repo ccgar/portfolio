@@ -222,7 +222,8 @@
         "src": "images/blink-case-3.png",
         "caption": {
           "title": "The Global Hub:",
-          "text": "These final views demonstrate the power of our modular approach, delivering a world-class, responsive experience that serves as Blink's definitive digital brochure."
+          "text": "These final views demonstrate the power of our modular approach, delivering a world-class, responsive experience that serves as Blink's definitive digital brochure.",
+          "position": "bottom-right"
         }
       }
     ],
