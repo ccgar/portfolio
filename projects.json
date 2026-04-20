@@ -265,7 +265,11 @@
     "images": [
       {
         "src": "images/rimac/Rimac-1.png",
-        "size": "full"
+        "size": "full",
+        "caption": {
+          "title": "",
+          "text": ""
+        }
       },
       {
         "src": "images/rimac/Rimac-2.png",
