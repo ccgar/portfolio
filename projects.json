@@ -148,7 +148,7 @@
         "caption": {
           "icon": "",
           "title": "Scalable Web Ecosystem & Transactional Efficiency",
-          "text": "The revamped web portal focuses on managing high-density financial information without overwhelming the user. I designed a scalable UI framework that prioritizes clarity in complex multi-step workflows, significantly reducing cognitive load and improving the completion rate of critical banking operations.",
+          "text": "",
           "position": "bottom-right"
         }
       },
@@ -157,7 +157,7 @@
         "src": "images/dbo-case-4.png",
         "caption": {
           "title": "Mobile-First Agility & Conversational UI",
-          "text": "Transforming the banking experience for the on-the-go user, I led the development of a mobile-first solution. By implementing a conversation-based interaction model, we reduced the barrier to entry for complex services, creating a seamless, accessible, and brand-consistent experience across the entire mobile ecosystem."
+          "text": ""
         }
       }
     ],
