@@ -591,6 +591,17 @@
     color: rgba(240,240,240,0.7);
     line-height: 1.75;
   }
+  .case-section-text p { margin-bottom: 12px; }
+  .case-section-text p:last-child { margin-bottom: 0; }
+  .case-section-text ul, .case-section-text ol {
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+  .case-section-text li {
+    margin-bottom: 6px;
+    color: rgba(240,240,240,0.7);
+  }
+  .case-section-text strong { color: var(--text); font-weight: 600; }
   .case-divider {
     height: 1px;
     background: var(--border);
@@ -1151,6 +1162,7 @@
     }
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 </head>
 <body>
 
@@ -1965,17 +1977,17 @@
       <div class="case-sections">
         <div>
           <p class="case-section-title">The Problem</p>
-          <p class="case-section-text">${data.problem}</p>
+          <div class="case-section-text">${marked.parse(data.problem || '')}</div>
         </div>
         <div class="case-divider"></div>
         <div>
           <p class="case-section-title">Process</p>
-          <p class="case-section-text">${data.process.replace(/\n\n/g, '<br><br>')}</p>
+          <div class="case-section-text">${marked.parse(data.process || '')}</div>
         </div>
         <div class="case-divider"></div>
         <div>
           <p class="case-section-title">Outcome</p>
-          <p class="case-section-text">${data.outcome}</p>
+          <div class="case-section-text">${marked.parse(data.outcome || '')}</div>
           <div class="case-metrics" style="margin-top:20px">${metricsHTML}</div>
         </div>
         <div>
