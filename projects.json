@@ -115,8 +115,16 @@
     "title": "Redefining the way the world refuels",
     "images": [
       {
-        "src": "images/blink/Blink-2.png",
-        "size": "full"
+        "size": "half",
+        "src": "images/blink-case-1.png"
+      },
+      {
+        "size": "half",
+        "src": "images/blink-case-2.png"
+      },
+      {
+        "size": "full",
+        "src": "images/blink-case-3.png"
       }
     ],
     "tags": [
