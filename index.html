@@ -623,6 +623,7 @@
     border-radius: 8px;
     overflow: hidden;
     display: block;
+    position: relative;
     font-size: 13px;
     color: var(--muted);
     width: 100%;
@@ -638,6 +639,45 @@
     height: auto;
     display: block;
     border-radius: 0;
+  }
+  /* ─── IMAGE CAPTION OVERLAY ─── */
+  .img-caption {
+    position: absolute;
+    max-width: 280px;
+    background: rgba(10,10,10,0.88);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    pointer-events: none;
+  }
+  .img-caption.top-left     { top: 16px; left: 16px; }
+  .img-caption.top-right    { top: 16px; right: 16px; }
+  .img-caption.bottom-left  { bottom: 16px; left: 16px; }
+  .img-caption.bottom-right { bottom: 16px; right: 16px; }
+  .img-caption-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .img-caption-icon {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .img-caption-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #c8ff00;
+    line-height: 1.3;
+  }
+  .img-caption-text {
+    font-size: 12px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.6;
   }
   .case-metrics {
     display: grid;
@@ -1959,10 +1999,20 @@
     ).join('');
 
     const imagesHTML = '<div class="case-imgs-wrap">' + data.images.map(img => {
-      const src  = typeof img === 'object' ? img.src  : img;
-      const size = typeof img === 'object' ? (img.size || 'full') : 'full';
+      const src     = typeof img === 'object' ? img.src  : img;
+      const size    = typeof img === 'object' ? (img.size || 'full') : 'full';
+      const caption = typeof img === 'object' ? img.caption : null;
+      const captionHTML = caption ? `
+        <div class="img-caption ${caption.position || 'bottom-left'}">
+          ${(caption.icon || caption.title) ? `
+            <div class="img-caption-header">
+              ${caption.icon  ? `<span class="img-caption-icon">${caption.icon}</span>` : ''}
+              ${caption.title ? `<span class="img-caption-title">${caption.title}</span>` : ''}
+            </div>` : ''}
+          ${caption.text ? `<p class="img-caption-text">${caption.text}</p>` : ''}
+        </div>` : '';
       return src
-        ? `<div class="case-img-placeholder ${size}"><img src="${src}" alt="Project screenshot" /></div>`
+        ? `<div class="case-img-placeholder ${size}"><img src="${src}" alt="Project screenshot" />${captionHTML}</div>`
         : `<div class="case-img-placeholder ${size}" style="color:var(--muted);font-size:13px">Screenshot coming soon</div>`;
     }).join('') + '</div>';
 

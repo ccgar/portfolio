@@ -78,12 +78,27 @@ collections:
                 name: "images"
                 widget: "list"
                 fields:
-                  - { label: "File path", name: "src", widget: "image" }
+                  - { label: "Image", name: "src", widget: "image" }
                   - label: "Size"
                     name: "size"
                     widget: "select"
                     options: ["full", "half", "small"]
                     default: "full"
+                  - label: "Caption overlay (optional)"
+                    name: "caption"
+                    widget: "object"
+                    required: false
+                    collapsed: true
+                    fields:
+                      - { label: "Icon (emoji)", name: "icon", widget: "string", required: false }
+                      - { label: "Title", name: "title", widget: "string", required: false }
+                      - { label: "Text", name: "text", widget: "text", required: false }
+                      - label: "Position"
+                        name: "position"
+                        widget: "select"
+                        options: ["top-left", "top-right", "bottom-left", "bottom-right"]
+                        default: "bottom-left"
+                        required: false
           - label: "BDO"
             name: "bdo"
             widget: "object"
