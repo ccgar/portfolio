@@ -200,15 +200,30 @@
     "images": [
       {
         "size": "full",
-        "src": "images/blink-case-1.png"
+        "src": "images/blink-case-1.png",
+        "caption": {
+          "icon": "",
+          "title": "Establishing the Foundation",
+          "text": "I developed an atomic library of design tokens and core UI elements to ensure 100% brand consistency across Blink’s global digital presence.",
+          "position": "bottom-right"
+        }
       },
       {
         "size": "full",
-        "src": "images/blink-case-2.png"
+        "src": "images/blink-case-2.png",
+        "caption": {
+          "icon": "",
+          "title": "Component-Based Ecosystem",
+          "text": "We moved away from static pages to a flexible component library, streamlining the handoff process and empowering content teams to build new layouts autonomously."
+        }
       },
       {
         "size": "full",
-        "src": "images/blink-case-3.png"
+        "src": "images/blink-case-3.png",
+        "caption": {
+          "title": "The Global Hub:",
+          "text": "These final views demonstrate the power of our modular approach, delivering a world-class, responsive experience that serves as Blink's definitive digital brochure."
+        }
       }
     ],
     "tags": [
