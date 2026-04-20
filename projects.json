@@ -41,16 +41,8 @@
   "bdo": {
     "metrics": [
       {
-        "value": "3×",
-        "label": "Faster report generation"
-      },
-      {
         "value": "28%",
         "label": "Increase in advisor NPS"
-      },
-      {
-        "value": "6",
-        "label": "New data viz components"
       }
     ],
     "meta": {
