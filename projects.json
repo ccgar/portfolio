@@ -24,7 +24,17 @@
     "images": [
       {
         "size": "full",
-        "src": "images/blk-case-1.png"
+        "src": "images/blk-case-1.png",
+        "caption": {
+          "icon": "🤖🕵🏻‍♂️",
+          "title": " Step 1: User Engagement, Design Brief & Prioritization ",
+          "text": "* Met with users to gather insights and requirements. \n* Created a Design Brief and prioritized features using meeting transcripts and related content.",
+          "pills": [
+            "Copilot",
+            "Copilot: Researcher"
+          ],
+          "position": "top-right"
+        }
       },
       {
         "size": "full",
