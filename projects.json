@@ -129,7 +129,7 @@
         "size": "full",
         "caption": {
           "title": "Strategic Discovery & Behavioral Mapping",
-          "text": "To ground the project in reality, I led a deep-dive discovery phase. By synthesizing complex user data into actionable **Personas and User Journey Maps**, we identified critical friction points in the legacy system. This strategic foundation allowed us to align business goals with real user needs, ensuring every design decision served a clear purpose.",
+          "text": "To ground the project in reality, I led a deep-dive discovery phase. By synthesizing complex user data into actionable **Personas and User Journey Maps**, we identified critical friction points in the legacy system.",
           "position": "top-left"
         }
       },
@@ -138,7 +138,7 @@
         "size": "full",
         "caption": {
           "title": "Evidence-Based Validation & Iteration",
-          "text": "Design is a hypothesis until it's tested. I orchestrated multiple cycles of usability testing and stakeholder interviews using high-fidelity prototypes. This iterative process was key to refining the conversational interface and tone of voice, ensuring the solution was not only functional but intuitively understood by diverse user segments.",
+          "text": "Design is a hypothesis until it's tested. I orchestrated multiple cycles of usability testing and stakeholder interviews using high-fidelity prototypes.",
           "position": "top-left"
         }
       },
@@ -147,7 +147,7 @@
         "src": "images/dbo-case-3.png",
         "caption": {
           "icon": "",
-          "title": "Scalable Web Ecosystem & Transactional Efficiency",
+          "title": "Scalable Web Ecosystem",
           "text": "",
           "position": "bottom-right"
         }
@@ -157,7 +157,8 @@
         "src": "images/dbo-case-4.png",
         "caption": {
           "title": "Mobile-First Agility & Conversational UI",
-          "text": ""
+          "text": "",
+          "position": "bottom-right"
         }
       }
     ],
