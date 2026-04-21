@@ -1994,6 +1994,10 @@
           <p class="card-company">${data.company}</p>
         </div>
         <div class="card-arrow">${ARROW_SVG}</div>`;
+      const bg = card.querySelector('.card-bg');
+      if (bg && data.cover) {
+        bg.style.backgroundImage = `url('${data.cover}')`;
+      }
     });
   }
 

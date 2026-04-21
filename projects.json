@@ -2,6 +2,7 @@
   "cases": [
     {
       "id": "blackrock",
+      "cover": "images/blk-case-1.png",
       "number": "Case 01",
       "cardTitle": "AI-Augmented Design",
       "title": "Expediting the ALGO Dashboard Lifecycle",
@@ -81,6 +82,7 @@
     },
     {
       "id": "bdo",
+      "cover": "images/dbo-case-1.png",
       "number": "Case 02",
       "cardTitle": "Understanding personal banking",
       "title": "Understanding the role of personal banking",
@@ -141,6 +143,7 @@
     },
     {
       "id": "blink",
+      "cover": "images/blink-case-1.png",
       "number": "Case 03",
       "cardTitle": "Redefining the way the world refuels",
       "title": "Redefining the way the world refuels",
@@ -192,6 +195,7 @@
     },
     {
       "id": "rimac",
+      "cover": "images/rimac-case-1.png",
       "number": "Case 04",
       "cardTitle": "RIMAC's Wellbeing Value Offer",
       "title": "RIMAC's Wellbeing Value Offer",
@@ -235,6 +239,7 @@
     },
     {
       "id": "hpai",
+      "cover": "images/hpai-case-1.png",
       "number": "Case 05",
       "cardTitle": "Natively Integrated AI for HP",
       "title": "UX/UI Exploration: Natively Integrated AI for HP",
@@ -277,6 +282,7 @@
     },
     {
       "id": "sbd",
+      "cover": "images/stanley-case-2.png",
       "number": "Case 06",
       "cardTitle": "Understanding how people work with tools",
       "title": "Understanding how people work with tools",

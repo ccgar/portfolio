@@ -54,6 +54,7 @@ collections:
             summary: "{{fields.number}} — {{fields.cardTitle}}"
             fields:
               - { label: "ID (slug, sin espacios)", name: "id", widget: "string", hint: "Clave única, ej: 'lore' o 'newproject'" }
+              - { label: "Cover (imagen de la tarjeta)", name: "cover", widget: "image", required: false }
               - { label: "Case Number", name: "number", widget: "string" }
               - { label: "Card Title", name: "cardTitle", widget: "string" }
               - { label: "Full Title", name: "title", widget: "string" }
