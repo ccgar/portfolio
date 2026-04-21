@@ -1225,6 +1225,61 @@
       padding-top: 0;
     }
   }
+
+  /* ─── MOBILE CASE PANEL FIXES ─── */
+  @media (max-width: 900px) {
+    /* Fix 1: captions debajo de la imagen en mobile — solo título */
+    .img-caption {
+      position: static;
+      max-width: 100%;
+      background: none;
+      backdrop-filter: none;
+      border: none;
+      border-top: 1px solid var(--border);
+      border-radius: 0;
+      padding: 10px 0 4px;
+      gap: 0;
+    }
+    .img-caption-text,
+    .img-caption-pills,
+    .img-caption-icon { display: none; }
+    .img-caption-title {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    /* Fix 2: half y small ocupan 100% de ancho en mobile */
+    .case-img-placeholder.half,
+    .case-img-placeholder.small { width: 100%; }
+
+    /* Fix 3: espacio entre tags/pills y el texto del problema */
+    .case-tags { margin-bottom: 20px; }
+
+    /* Fix 4: stats en fila horizontal, cada uno 100% de ancho */
+    .stats-bento {
+      grid-template-columns: 1fr;
+      margin: 40px 0 0 0;
+    }
+    .stat-card {
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat-number {
+      font-size: 40px;
+      flex-shrink: 0;
+      min-width: 80px;
+    }
+    .stat-label {
+      max-width: none;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+    .stat-context { display: none; }
+  }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 </head>
