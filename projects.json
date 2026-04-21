@@ -125,7 +125,7 @@
       "number": "Case 02",
       "process": "The project kicked off with a Discovery Phase focused on understanding user behavior, business priorities, and backend readiness. Through stakeholder interviews, user archetypes, journey mapping, workshops, and benchmarking, we identified a core opportunity: leveraging conversational interfaces and mobile capabilities to make the app the preferred channel for banking users. Our hypothesis was that a chat-based, simple messaging experience would reduce friction and create a more seamless, efficient interaction model. From this research, we defined and proposed a roadmap balancing three critical dimensions — infrastructure readiness, user needs, and business priorities. In the Design Delivery and Testing Phase, we translated insights into a scalable experience system. We ran concept testing and MVP definition cycles, iterating on copies, voice, and tone in close collaboration with the development team. Validation included usability testing, heuristic evaluations, card sorting, user interviews, and hard data from NPS surveys and analytics. The result was a refined, tested design grounded in real user feedback and measurable behavior data.",
       "outcome": "We successfully revamped the app and portal, enhancing brand design and recognition in the process. Additionally, we established design principles and systems to ensure cohesion across the organization, resulting in user-friendly services that meet and exceed expectations.\n\nEstablished the first Cross-Platform Design System for the organization, reducing design-to-development handoff time and ensuring 100% brand consistency across all digital touchpoints.\n\nSpearheaded the end-to-end migration of 42 legacy features to a modernized platform within a 12-month timeframe, ensuring system scalability and improved performance.",
-      "cover": "images/dbo-case-1.png",
+      "cover": "images/bdo.png",
       "title": "Understanding the role of personal banking",
       "images": [
         {
@@ -200,7 +200,7 @@
       "number": "Case 03",
       "process": "My approach was rooted in Modular Systemic Thinking. To solve the paradox of vast content versus limited components, I led a cross-functional collaboration between design and content strategy. We developed a high-versatility component library that allowed for hundreds of page variations without increasing development complexity. This 'Lean Design' strategy ensured that the global site remained fast, SEO-optimized, and easy to maintain by local teams worldwide.",
       "outcome": "We delivered a cohesive, scalable ecosystem that solidified Blink's brand authority in the EV space. The new digital infrastructure not only unified the global brand message but also streamlined the B2B lead generation funnel, creating a centralized, high-performance resource for customers across their entire global footprint.",
-      "cover": "images/blink-case-1.png",
+      "cover": "images/blink-case-2.png",
       "title": "Redefining the way the world refuels",
       "images": [
         {
@@ -265,7 +265,7 @@
       "number": "Case 04",
       "process": "Faced with a tight timeframe and legacy infrastructure, I led a strategy of 'ecosystem orchestration.' Instead of building from scratch, we audited and connected existing internal solutions to create a seamless user journey. Our 5-stage process—from state-of-the-art visioning to high-fidelity validation—focused on identifying the 'connective tissue' between insurance services and preventative health habits.",
       "outcome": "We successfully launched the Wellbeing Hub, a strategic extension of RIMAC's core offering that transformed the app into a daily-use health companion. This integration not only improved user sentiment but also positioned RIMAC as a pioneer in preventative care, creating a scalable model for reducing chronic disease risk through proactive digital engagement.\n\n* Strategic Service Integration: I led the consolidation of RIMAC's fragmented service ecosystem into a single, unified Wellbeing Hub.\n* Engagement-Driven Journey: Developed a cross-journey gamification framework designed to incentivize healthy habits.\n* Privacy-First Risk Identification: We pioneered a non-intrusive diagnostic experience to identify health risks through indirect user behavior analysis.",
-      "cover": "images/rimac-case-1.png",
+      "cover": "images/RIMAC-CASE-2.png",
       "title": "RIMAC's Wellbeing Value Offer",
       "images": [
         {
@@ -323,7 +323,7 @@
       "number": "Case 05",
       "process": "We explored a dual-layer integration system: a seamless UI that allows the agent to \"reach into\" existing HP software and third-party creative suites, and an Integration Marketplace — a modular hub where users plug specific AI capabilities into their workflow through a cohesive iconographic system that feels like a natural OS extension.\n\nWe also developed Privacy as a Visual State — two distinct modes so users always know where their data resides. Local Mode uses cooler tones and containment UI for on-device processing. Web Mode shifts to purple, expansive aesthetic when connecting to the cloud, maintaining a clear \"connected\" status.",
       "outcome": "We moved beyond the \"prompt box.\" By grounding AI in the machine's physical and digital architecture, we transformed a tool into a teammate — ensuring security is felt, not just promised.\n\nWe explored a multi-agent architecture with specialized personas: The Researcher (data synthesis and citations), The Mechanic (machine health, thermals, background tasks), and The Librarian (visual indexer for local file retrieval and semantic search).",
-      "cover": "images/hpai-case-1.png",
+      "cover": "images/hp.png",
       "title": "UX/UI Exploration: Natively Integrated AI for HP",
       "images": [
         {
@@ -380,7 +380,7 @@
       "number": "Case 06",
       "process": "As the Lead Designer, I navigated a fast-tracked timeline by collaborating directly with subject-matter experts (SMEs). Given the technical complexity, I focused on Domain-Driven Design, rapidly prototyping the Bluetooth pairing and real-time data sync flows. I engineered a multi-tenant design system that allowed for seamless 'theming' across three brands, ensuring that the core architecture remained unified while the brand-specific layers remained distinct and recognizable.",
       "outcome": "We successfully delivered and launched all three applications on schedule. The solution is currently live in the market, serving as the primary control interface for professional technicians. This project proved that clear systemic architecture and close engineering partnership can overcome extreme technical constraints and the lack of traditional discovery data.",
-      "cover": "images/stanley-case-2.png",
+      "cover": "images/stanley-CASE-1.png",
       "title": "Understanding how people work with tools",
       "images": [
         {
