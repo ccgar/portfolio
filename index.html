@@ -2176,7 +2176,7 @@
           <p class="case-section-title">Outcome</p>
           <div class="case-section-text">${marked.parse(data.outcome || '')}</div>
           <div class="case-metrics" style="margin-top:20px">${metricsHTML}</div>
-          ${imgs.outcome.length ? buildImgBlock(imgs.outcome) : ''}
+          ${imgs.outcome.length ? `<div style="margin-top:24px">${buildImgBlock(imgs.outcome)}</div>` : ''}
         </div>
         ${endBlock}
       </div>`;
