@@ -36,7 +36,8 @@
               "Copilot: Researcher"
             ],
             "position": "top-right"
-          }
+          },
+          "after": "problem"
         },
         {
           "size": "full",
@@ -49,7 +50,8 @@
             "pills": [
               "No AI Tool"
             ]
-          }
+          },
+          "after": "problem"
         },
         {
           "size": "full",
@@ -63,7 +65,8 @@
               "FIGMA MAKE",
               "Copilot: Prompt Coach"
             ]
-          }
+          },
+          "after": "outcome"
         },
         {
           "size": "full",
@@ -76,7 +79,8 @@
             "pills": [
               "FIGMA MAKE"
             ]
-          }
+          },
+          "after": "outcome"
         },
         {
           "size": "full",
@@ -89,7 +93,8 @@
             "pills": [
               "NO AI TOOL"
             ]
-          }
+          },
+          "after": "end"
         }
       ],
       "tags": [
