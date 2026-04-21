@@ -158,7 +158,8 @@
             "title": "Strategic Discovery & Behavioral Mapping",
             "text": "To ground the project in reality, I led a deep-dive discovery phase. By synthesizing complex user data into actionable **Personas and User Journey Maps**, we identified critical friction points in the legacy system.",
             "position": "top-left"
-          }
+          },
+          "after": "process"
         },
         {
           "src": "images/dbo-case-2.png",
@@ -167,7 +168,8 @@
             "title": "Evidence-Based Validation & Iteration",
             "text": "Design is a hypothesis until it's tested. I orchestrated multiple cycles of usability testing and stakeholder interviews using high-fidelity prototypes.",
             "position": "top-left"
-          }
+          },
+          "after": "process"
         },
         {
           "size": "half",
