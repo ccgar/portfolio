@@ -37,7 +37,7 @@
             ],
             "position": "top-right"
           },
-          "after": "problem"
+          "after": "process"
         },
         {
           "size": "full",
@@ -51,7 +51,7 @@
               "No AI Tool"
             ]
           },
-          "after": "problem"
+          "after": "process"
         },
         {
           "size": "full",
@@ -66,7 +66,7 @@
               "Copilot: Prompt Coach"
             ]
           },
-          "after": "outcome"
+          "after": "process"
         },
         {
           "size": "full",
@@ -80,7 +80,7 @@
               "FIGMA MAKE"
             ]
           },
-          "after": "outcome"
+          "after": "process"
         },
         {
           "size": "full",
@@ -94,7 +94,7 @@
               "NO AI TOOL"
             ]
           },
-          "after": "end"
+          "after": "process"
         }
       ],
       "tags": [
