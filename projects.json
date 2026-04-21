@@ -45,7 +45,7 @@
           "caption": {
             "title": "Step 2: Flow Analysis",
             "text": "Analyzed actual user flow and identified pain points.",
-            "position": "bottom-right",
+            "position": "bottom-left",
             "icon": "🧠",
             "pills": [
               "No AI Tool"
@@ -60,7 +60,7 @@
             "icon": "🤖",
             "title": "Step 3: Initial Design Concepts",
             "text": "* Generated Figma prompts for initial design concepts. \n* Prompt Coach to craft effective prompts for Figma Make.",
-            "position": "top-left",
+            "position": "bottom-left",
             "pills": [
               "FIGMA MAKE",
               "Copilot: Prompt Coach"
