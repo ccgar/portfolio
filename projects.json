@@ -235,7 +235,8 @@
             "title": "Establishing the Foundation",
             "text": "I developed an atomic library of design tokens and core UI elements to ensure 100% brand consistency across Blink's global digital presence.",
             "position": "bottom-right"
-          }
+          },
+          "after": "outcome"
         },
         {
           "size": "full",
@@ -300,7 +301,8 @@
             "title": "Orchestrating the Wellbeing Ecosystem",
             "text": "To bridge the gap between reactive insurance and proactive wellness, I developed a comprehensive Service Blueprint. This map visualized the synergy between RIMAC's fragmented legacy services—including clinical care, pediatric support, and mental health platforms.",
             "position": "bottom-right"
-          }
+          },
+          "after": "process"
         },
         {
           "src": "images/rimac-case-2.png",
@@ -416,7 +418,8 @@
             "text": "Designing for IoT and high-precision tools required a deep understanding of real-time data and physical constraints. I translated complex torque logic and Bluetooth connectivity states into an intuitive mobile experience for professional technicians.",
             "icon": "🛠️",
             "position": "bottom-right"
-          }
+          },
+          "after": "process"
         },
         {
           "src": "images/stanley-case-1.png",
