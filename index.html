@@ -1228,16 +1228,15 @@
 
   /* ─── MOBILE CASE PANEL FIXES ─── */
   @media (max-width: 900px) {
-    /* Fix 1: captions debajo de la imagen en mobile — solo título */
+    /* Fix 1: captions debajo de la imagen en mobile — solo título, sin fondo ni borde */
     .img-caption {
       position: static;
       max-width: 100%;
       background: none;
       backdrop-filter: none;
       border: none;
-      border-top: 1px solid var(--border);
       border-radius: 0;
-      padding: 10px 0 4px;
+      padding: 8px 0 2px;
       gap: 0;
     }
     .img-caption-text,
@@ -1247,6 +1246,34 @@
       font-size: 12px;
       color: var(--muted);
       font-weight: 500;
+    }
+
+    /* Fix 4b: case metrics en fila horizontal, cada uno 100% de ancho */
+    .case-metrics {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .case-metric {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      background: none;
+      border: none;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 14px 0;
+    }
+    .case-metric:last-child { border-bottom: none; }
+    .case-metric-value {
+      font-size: 28px;
+      flex-shrink: 0;
+      min-width: 70px;
+      margin-bottom: 0;
+    }
+    .case-metric-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
     }
 
     /* Fix 2: half y small ocupan 100% de ancho en mobile */
