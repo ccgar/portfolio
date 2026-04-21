@@ -47,10 +47,13 @@ collections:
         label: "Case Studies"
         file: "projects.json"
         fields:
-          - label: "BlackRock"
-            name: "blackrock"
-            widget: "object"
-            fields: &project_fields
+          - label: "Cases"
+            name: "cases"
+            widget: "list"
+            allow_add: true
+            summary: "{{fields.number}} — {{fields.cardTitle}}"
+            fields:
+              - { label: "ID (slug, sin espacios)", name: "id", widget: "string", hint: "Clave única, ej: 'lore' o 'newproject'" }
               - { label: "Case Number", name: "number", widget: "string" }
               - { label: "Card Title", name: "cardTitle", widget: "string" }
               - { label: "Full Title", name: "title", widget: "string" }
@@ -64,7 +67,7 @@ collections:
                   - { label: "Duration", name: "Duration", widget: "string" }
                   - { label: "Team", name: "Team", widget: "string" }
               - { label: "Tags", name: "tags", widget: "list" }
-              - { label: "Row", name: "row", widget: "number", value_type: "int" }
+              - { label: "Row (1=featured full-width, 2-3-4=pairs)", name: "row", widget: "number", value_type: "int", default: 5 }
               - { label: "Problem", name: "problem", widget: "markdown" }
               - { label: "Process", name: "process", widget: "markdown" }
               - { label: "Outcome", name: "outcome", widget: "markdown" }
@@ -105,26 +108,6 @@ collections:
                         options: ["top-left", "top-right", "bottom-left", "bottom-right"]
                         default: "bottom-left"
                         required: false
-          - label: "BDO"
-            name: "bdo"
-            widget: "object"
-            fields: *project_fields
-          - label: "Blink"
-            name: "blink"
-            widget: "object"
-            fields: *project_fields
-          - label: "RIMAC"
-            name: "rimac"
-            widget: "object"
-            fields: *project_fields
-          - label: "HP AI"
-            name: "hpai"
-            widget: "object"
-            fields: *project_fields
-          - label: "Stanley Black & Decker"
-            name: "sbd"
-            widget: "object"
-            fields: *project_fields
 
   # ─── ABOUT & EXPERIENCE ───
   - name: "about"

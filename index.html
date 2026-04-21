@@ -1764,7 +1764,11 @@
     fetch('testimonials.json' + v).then(r => r.json()),
     fetch('contact.json' + v).then(r => r.json())
   ]).then(([hero, stats, projs, about, testimonials, contact]) => {
-    projects = projs;
+    if (projs.cases) {
+      projs.cases.forEach(c => { projects[c.id] = c; });
+    } else {
+      projects = projs;
+    }
     renderCards();
     attachCardHandlers();
     renderHero(hero);
