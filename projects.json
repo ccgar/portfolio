@@ -35,7 +35,7 @@
               "Copilot",
               "Copilot: Researcher"
             ],
-            "position": "top-right"
+            "position": "bottom-left"
           },
           "after": "process"
         },
