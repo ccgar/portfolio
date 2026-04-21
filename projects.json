@@ -100,7 +100,8 @@
           "size": "full",
           "after": "end",
           "caption": {
-            "position": "bottom-left"
+            "position": "bottom-left",
+            "title": "Exception Based Summary"
           },
           "src": "images/screen-blk2.png"
         },
@@ -108,7 +109,8 @@
           "size": "full",
           "after": "end",
           "caption": {
-            "position": "bottom-left"
+            "position": "bottom-left",
+            "title": "EOD GOLD COPY"
           },
           "src": "images/scrren_blk.png"
         }
