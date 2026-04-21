@@ -88,6 +88,12 @@ collections:
                     widget: "select"
                     options: ["full", "half", "small"]
                     default: "full"
+                  - label: "Mostrar después de"
+                    name: "after"
+                    widget: "select"
+                    options: ["problem", "process", "outcome", "end"]
+                    default: "end"
+                    required: false
                   - label: "Caption overlay (optional)"
                     name: "caption"
                     widget: "object"

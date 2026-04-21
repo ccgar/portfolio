@@ -2095,24 +2095,9 @@
   // ─── PANEL LOGIC ───
   let activeProject = null;
 
-  function buildPanelHTML(data) {
-    const metaHTML = Object.entries(data.meta).map(([k, v]) =>
-      `<div class="case-meta-item">
-        <span class="case-meta-label">${k}</span>
-        <span class="case-meta-value">${v}</span>
-      </div>`
-    ).join('');
-
-    const tagsHTML = data.tags.map(t => `<span class="tag">${t}</span>`).join('');
-
-    const metricsHTML = data.metrics.map(m =>
-      `<div class="case-metric">
-        <div class="case-metric-value">${m.value}</div>
-        <div class="case-metric-label">${m.label}</div>
-      </div>`
-    ).join('');
-
-    const imagesHTML = '<div class="case-imgs-wrap">' + data.images.map(img => {
+  function buildImgBlock(imgs) {
+    if (!imgs || !imgs.length) return '';
+    return '<div class="case-imgs-wrap">' + imgs.map(img => {
       const src     = typeof img === 'object' ? img.src  : img;
       const size    = typeof img === 'object' ? (img.size || 'full') : 'full';
       const caption = typeof img === 'object' ? img.caption : null;
@@ -2133,6 +2118,38 @@
         ? `<div class="case-img-placeholder ${size}"><img src="${src}" alt="Project screenshot" />${captionHTML}</div>`
         : `<div class="case-img-placeholder ${size}" style="color:var(--muted);font-size:13px">Screenshot coming soon</div>`;
     }).join('') + '</div>';
+  }
+
+  function buildPanelHTML(data) {
+    const metaHTML = Object.entries(data.meta).map(([k, v]) =>
+      `<div class="case-meta-item">
+        <span class="case-meta-label">${k}</span>
+        <span class="case-meta-value">${v}</span>
+      </div>`
+    ).join('');
+
+    const tagsHTML = data.tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+    const metricsHTML = data.metrics.map(m =>
+      `<div class="case-metric">
+        <div class="case-metric-value">${m.value}</div>
+        <div class="case-metric-label">${m.label}</div>
+      </div>`
+    ).join('');
+
+    // Distribuir imágenes por sección según campo "after"
+    const imgs = { problem: [], process: [], outcome: [], end: [] };
+    (data.images || []).forEach(img => {
+      const slot = (typeof img === 'object' && img.after) ? img.after : 'end';
+      (imgs[slot] = imgs[slot] || []).push(img);
+    });
+
+    const endBlock = imgs.end.length
+      ? `<div>
+           <p class="case-section-title">Screens</p>
+           <div class="case-images">${buildImgBlock(imgs.end)}</div>
+         </div>`
+      : '';
 
     return `
       <div>
@@ -2146,22 +2163,22 @@
         <div>
           <p class="case-section-title">The Problem</p>
           <div class="case-section-text">${marked.parse(data.problem || '')}</div>
+          ${imgs.problem.length ? buildImgBlock(imgs.problem) : ''}
         </div>
-        <div class="case-divider"></div>
+        ${imgs.problem.length ? '' : '<div class="case-divider"></div>'}
         <div>
           <p class="case-section-title">Process</p>
           <div class="case-section-text">${marked.parse(data.process || '')}</div>
+          ${imgs.process.length ? buildImgBlock(imgs.process) : ''}
         </div>
-        <div class="case-divider"></div>
+        ${imgs.process.length ? '' : '<div class="case-divider"></div>'}
         <div>
           <p class="case-section-title">Outcome</p>
           <div class="case-section-text">${marked.parse(data.outcome || '')}</div>
           <div class="case-metrics" style="margin-top:20px">${metricsHTML}</div>
+          ${imgs.outcome.length ? buildImgBlock(imgs.outcome) : ''}
         </div>
-        <div>
-          <p class="case-section-title">Screens</p>
-          <div class="case-images">${imagesHTML}</div>
-        </div>
+        ${endBlock}
       </div>`;
   }
 
